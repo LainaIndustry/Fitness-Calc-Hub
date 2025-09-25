@@ -1,1 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heart Rate Calculator - FitCalc</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="logo">
+                    <i class="fas fa-dumbbell"></i>
+                    <a href="../index.html" style="text-decoration: none; color: inherit;">
+                        <span>FitCalc</span>
+                    </a>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="../index.html" class="nav-link">Home</a></li>
+                    <li><a href="../index.html#tools" class="nav-link">Tools</a></li>
+                    <li><a href="../index.html#about" class="nav-link">About</a></li>
+                    <li><a href="../legal/contact.html" class="nav-link">Contact</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
 
+    <main class="calculator-container">
+        <div class="calculator-header">
+            <h1><i class="fas fa-heart-pulse"></i> Heart Rate Calculator</h1>
+            <p>Monitor your target heart rate zones for effective workouts</p>
+        </div>
+
+        <form id="heartRateForm">
+            <div class="form-group">
+                <label for="age">Age (years)</label>
+                <input type="number" id="age" placeholder="Enter your age" min="15" max="100" required>
+            </div>
+
+            <div class="form-group">
+                <label for="restingHR">Resting Heart Rate (bpm)</label>
+                <input type="number" id="restingHR" placeholder="Enter resting HR" min="40" max="100" required>
+                <small>Measure your pulse when completely at rest</small>
+            </div>
+
+            <div class="form-group">
+                <label for="fitnessLevel">Fitness Level</label>
+                <select id="fitnessLevel" required>
+                    <option value="beginner">Beginner</option>
+                    <option value="intermediate" selected>Intermediate</option>
+                    <option value="advanced">Advanced</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="goal">Training Goal</label>
+                <select id="goal" required>
+                    <option value="fat_burn">Fat Burning</option>
+                    <option value="cardio">Cardiovascular Fitness</option>
+                    <option value="endurance">Endurance Training</option>
+                    <option value="performance">Peak Performance</option>
+                </select>
+            </div>
+
+            <button type="submit" class="calculate-btn">
+                <i class="fas fa-calculator"></i> Calculate Heart Rate Zones
+            </button>
+        </form>
+
+        <div id="result" class="result-container">
+            <h3>Your Heart Rate Zones</h3>
+            <div id="resultValue" class="result-value">0 bpm</div>
+            <div id="resultDescription" class="result-description"></div>
+            <div id="zonesInfo" class="zones-info"></div>
+        </div>
+
+        <div class="calculator-info">
+            <h3><i class="fas fa-info-circle"></i> About Heart Rate Zones</h3>
+            <p>Heart rate zones help you train effectively by targeting specific fitness goals.</p>
+            
+            <div class="zones-guide">
+                <h4>Heart Rate Zones:</h4>
+                <div class="zone-item">
+                    <span class="zone-color zone1"></span>
+                    <strong>Zone 1 (50-60%):</strong> Very light - Warm up/Cool down
+                </div>
+                <div class="zone-item">
+                    <span class="zone-color zone2"></span>
+                    <strong>Zone 2 (60-70%):</strong> Light - Fat burning, endurance
+                </div>
+                <div class="zone-item">
+                    <span class="zone-color zone3"></span>
+                    <strong>Zone 3 (70-80%):</strong> Moderate - Aerobic fitness
+                </div>
+                <div class="zone-item">
+                    <span class="zone-color zone4"></span>
+                    <strong>Zone 4 (80-90%):</strong> Hard - Anaerobic threshold
+                </div>
+                <div class="zone-item">
+                    <span class="zone-color zone5"></span>
+                    <strong>Zone 5 (90-100%):</strong> Maximum - Peak performance
+                </div>
+            </div>
+
+            <h4>How to Measure Resting Heart Rate:</h4>
+            <ul>
+                <li>Measure first thing in the morning before getting out of bed</li>
+                <li>Count pulses for 30 seconds and multiply by 2</li>
+                <li>Use a heart rate monitor for accuracy</li>
+                <li>Average resting HR is 60-100 bpm</li>
+            </ul>
+
+            <div class="disclaimer">
+                <p><strong>Note:</strong> Consult a doctor before starting intense exercise programs, especially if you have heart conditions.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="logo">
+                        <i class="fas fa-dumbbell"></i>
+                        <span>FitCalc</span>
+                    </div>
+                    <p>Your trusted partner in fitness calculation and health optimization.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../index.html#tools">Calculators</a></li>
+                        <li><a href="../index.html#about">About</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Legal</h3>
+                    <ul>
+                        <li><a href="../legal/privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="../legal/terms.html">Terms of Service</a></li>
+                        <li><a href="../legal/disclaimer.html">Disclaimer</a></li>
+                        <li><a href="../legal/contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Connect</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 FitCalc. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/heart-rate.js"></script>
+</body>
+</html>
