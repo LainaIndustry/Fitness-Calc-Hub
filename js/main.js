@@ -78,3 +78,13 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         }
     });
 });
+// Form validation helper
+function validateNumberInput(input, min = 0, max = 999) {
+    const value = parseFloat(input.value);
+    if (isNaN(value) || value < min || value > max) {
+        input.style.borderColor = '#ef4444';
+        return false;
+    }
+    input.style.borderColor = '#e5e7eb';
+    return true;
+}
