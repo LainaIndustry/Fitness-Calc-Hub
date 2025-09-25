@@ -50,44 +50,110 @@
 
             <div class="form-group">
                 <label for="weight">Weight</label>
-                <input type="number" id="weight" placeholder="Enter weight" required>
-                <span id="weightUnit">kg</span>
+                <div class="input-with-unit">
+                    <input type="number" id="weight" placeholder="Enter weight" required>
+                    <span id="weightUnit" class="input-unit">kg</span>
+                </div>
             </div>
 
             <div class="form-group">
                 <label for="height">Height</label>
-                <input type="number" id="height" placeholder="Enter height" required>
-                <span id="heightUnit">cm</span>
+                <div class="input-with-unit">
+                    <input type="number" id="height" placeholder="Enter height" required>
+                    <span id="heightUnit" class="input-unit">cm</span>
+                </div>
             </div>
 
-            <button type="submit" class="calculate-btn">Calculate BMI</button>
+            <button type="submit" class="calculate-btn">
+                <i class="fas fa-calculator"></i> Calculate BMI
+            </button>
         </form>
 
         <div id="result" class="result-container">
             <h3>Your BMI Result</h3>
             <div id="resultValue" class="result-value">0.0</div>
+            <div id="resultCategory" class="result-category"></div>
             <div id="resultDescription" class="result-description"></div>
         </div>
 
         <div class="calculator-info">
-            <h3>About BMI</h3>
+            <h3><i class="fas fa-info-circle"></i> About BMI</h3>
             <p>Body Mass Index (BMI) is a measure of body fat based on height and weight that applies to adult men and women.</p>
             
-            <h4>BMI Categories:</h4>
-            <ul>
-                <li>Underweight: Below 18.5</li>
-                <li>Normal weight: 18.5 - 24.9</li>
-                <li>Overweight: 25 - 29.9</li>
-                <li>Obesity: 30 and above</li>
-            </ul>
+            <div class="bmi-chart">
+                <h4>BMI Categories:</h4>
+                <div class="chart-item underweight">
+                    <span class="chart-range">Below 18.5</span>
+                    <span class="chart-label">Underweight</span>
+                </div>
+                <div class="chart-item normal">
+                    <span class="chart-range">18.5 - 24.9</span>
+                    <span class="chart-label">Normal weight</span>
+                </div>
+                <div class="chart-item overweight">
+                    <span class="chart-range">25 - 29.9</span>
+                    <span class="chart-label">Overweight</span>
+                </div>
+                <div class="chart-item obese">
+                    <span class="chart-range">30 and above</span>
+                    <span class="chart-label">Obesity</span>
+                </div>
+            </div>
+
+            <div class="disclaimer">
+                <p><strong>Note:</strong> BMI is a screening tool and does not directly measure body fat. It may not be accurate for athletes, pregnant women, or the elderly.</p>
+            </div>
         </div>
     </main>
 
     <footer class="footer">
-        <!-- Same footer as index.html -->
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="logo">
+                        <i class="fas fa-dumbbell"></i>
+                        <span>FitCalc</span>
+                    </div>
+                    <p>Your trusted partner in fitness calculation and health optimization.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../index.html#tools">Calculators</a></li>
+                        <li><a href="../index.html#about">About</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Legal</h3>
+                    <ul>
+                        <li><a href="../legal/privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="../legal/terms.html">Terms of Service</a></li>
+                        <li><a href="../legal/disclaimer.html">Disclaimer</a></li>
+                        <li><a href="../legal/contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Connect</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 FitCalc. All rights reserved.</p>
+            </div>
+        </div>
     </footer>
 
-    <script src="../js/bmi.js"></script>
     <script src="../js/main.js"></script>
+    <script src="../js/bmi.js"></script>
 </body>
 </html>
