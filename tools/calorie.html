@@ -1,1 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calorie Calculator - FitCalc</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="logo">
+                    <i class="fas fa-dumbbell"></i>
+                    <a href="../index.html" style="text-decoration: none; color: inherit;">
+                        <span>FitCalc</span>
+                    </a>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="../index.html" class="nav-link">Home</a></li>
+                    <li><a href="../index.html#tools" class="nav-link">Tools</a></li>
+                    <li><a href="../index.html#about" class="nav-link">About</a></li>
+                    <li><a href="../legal/contact.html" class="nav-link">Contact</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
 
+    <main class="calculator-container">
+        <div class="calculator-header">
+            <h1><i class="fas fa-apple-whole"></i> Calorie Calculator</h1>
+            <p>Track your daily calorie needs based on your fitness goals</p>
+        </div>
+
+        <form id="calorieForm">
+            <div class="form-group">
+                <label>Gender</label>
+                <div class="radio-group">
+                    <label class="radio-option">
+                        <input type="radio" name="gender" value="male" checked>
+                        <span class="radio-checkmark"></span>
+                        Male
+                    </label>
+                    <label class="radio-option">
+                        <input type="radio" name="gender" value="female">
+                        <span class="radio-checkmark"></span>
+                        Female
+                    </label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="age">Age (years)</label>
+                <input type="number" id="age" placeholder="Enter your age" min="15" max="100" required>
+            </div>
+
+            <div class="form-group">
+                <label for="weight">Weight (kg)</label>
+                <input type="number" id="weight" placeholder="Enter weight" min="30" max="300" required>
+            </div>
+
+            <div class="form-group">
+                <label for="height">Height (cm)</label>
+                <input type="number" id="height" placeholder="Enter height" min="100" max="250" required>
+            </div>
+
+            <div class="form-group">
+                <label for="activity">Activity Level</label>
+                <select id="activity" required>
+                    <option value="1.2">Sedentary (little or no exercise)</option>
+                    <option value="1.375">Lightly active (light exercise 1-3 days/week)</option>
+                    <option value="1.55" selected>Moderately active (moderate exercise 3-5 days/week)</option>
+                    <option value="1.725">Very active (hard exercise 6-7 days/week)</option>
+                    <option value="1.9">Extremely active (very hard exercise, physical job)</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="goal">Weight Goal</label>
+                <select id="goal" required>
+                    <option value="loss">Weight Loss</option>
+                    <option value="maintain" selected>Maintain Weight</option>
+                    <option value="gain">Weight Gain</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="rate">Weekly Goal Rate</label>
+                <select id="rate" required>
+                    <option value="-500">Lose 0.5 kg per week</option>
+                    <option value="-250">Lose 0.25 kg per week</option>
+                    <option value="0">Maintain weight</option>
+                    <option value="250">Gain 0.25 kg per week</option>
+                    <option value="500">Gain 0.5 kg per week</option>
+                </select>
+            </div>
+
+            <button type="submit" class="calculate-btn">
+                <i class="fas fa-calculator"></i> Calculate Calories
+            </button>
+        </form>
+
+        <div id="result" class="result-container">
+            <h3>Your Calorie Needs</h3>
+            <div id="resultValue" class="result-value">0 calories/day</div>
+            <div id="resultDescription" class="result-description"></div>
+            <div id="macroInfo" class="macro-info"></div>
+        </div>
+
+        <div class="calculator-info">
+            <h3><i class="fas fa-info-circle"></i> About Calorie Calculation</h3>
+            <p>Calorie needs vary based on your goals. Use this calculator to determine your optimal daily calorie intake.</p>
+            
+            <h4>Weight Loss Tips:</h4>
+            <ul>
+                <li>Aim for a 500-calorie deficit for safe weight loss (0.5kg/week)</li>
+                <li>Focus on nutrient-dense foods</li>
+                <li>Combine diet with regular exercise</li>
+                <li>Don't go below 1200 calories (women) or 1500 calories (men)</li>
+            </ul>
+
+            <h4>Weight Gain Tips:</h4>
+            <ul>
+                <li>Aim for a 250-500 calorie surplus</li>
+                <li>Focus on protein-rich foods</li>
+                <li>Combine with strength training</li>
+                <li>Choose healthy calorie sources</li>
+            </ul>
+
+            <div class="disclaimer">
+                <p><strong>Note:</strong> These are estimates. Individual needs may vary based on metabolism and other factors.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="logo">
+                        <i class="fas fa-dumbbell"></i>
+                        <span>FitCalc</span>
+                    </div>
+                    <p>Your trusted partner in fitness calculation and health optimization.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../index.html#tools">Calculators</a></li>
+                        <li><a href="../index.html#about">About</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Legal</h3>
+                    <ul>
+                        <li><a href="../legal/privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="../legal/terms.html">Terms of Service</a></li>
+                        <li><a href="../legal/disclaimer.html">Disclaimer</a></li>
+                        <li><a href="../legal/contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Connect</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 FitCalc. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/calorie.js"></script>
+</body>
+</html>
