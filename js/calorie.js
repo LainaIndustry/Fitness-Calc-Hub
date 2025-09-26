@@ -1,12 +1,15 @@
 // Calorie Calculator Logic
 document.addEventListener('DOMContentLoaded', function() {
     const form = document.getElementById('calorieForm');
+    if (!form) return;
+
     const goalSelect = document.getElementById('goal');
     const rateSelect = document.getElementById('rate');
 
     // Update rate options based on goal
     goalSelect.addEventListener('change', function() {
         updateRateOptions(this.value);
+        clearResults();
     });
 
     form.addEventListener('submit', function(e) {
@@ -42,9 +45,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     function updateRateOptions(goal) {
-        const rateSelect = document.getElementById('rate');
-        rateSelect.innerHTML = '';
-
         const options = {
             'loss': [
                 { value: -250, text: 'Slow (0.25 kg/week)' },
@@ -63,6 +63,7 @@ document.addEventListener('DOMContentLoaded', function() {
             ]
         };
 
+        rateSelect.innerHTML = '';
         options[goal].forEach(option => {
             const optionElement = document.createElement('option');
             optionElement.value = option.value;
@@ -73,26 +74,21 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function validateInputs(age, weight, height) {
         let isValid = true;
+        clearErrors();
 
         if (isNaN(age) || age < 15 || age > 100) {
-            showError(document.getElementById('age'), 'Please enter an age between 15 and 100');
+            showError(document.getElementById('age'), 'Please enter an age between 15 and 100 years');
             isValid = false;
-        } else {
-            clearError(document.getElementById('age'));
         }
 
         if (isNaN(weight) || weight < 30 || weight > 300) {
             showError(document.getElementById('weight'), 'Please enter a weight between 30 and 300 kg');
             isValid = false;
-        } else {
-            clearError(document.getElementById('weight'));
         }
 
         if (isNaN(height) || height < 100 || height > 250) {
             showError(document.getElementById('height'), 'Please enter a height between 100 and 250 cm');
             isValid = false;
-        } else {
-            clearError(document.getElementById('height'));
         }
 
         return isValid;
@@ -119,25 +115,28 @@ document.addEventListener('DOMContentLoaded', function() {
 
         switch(goal) {
             case 'loss':
-                proteinRatio = 0.35; // Higher protein for satiety
+                proteinRatio = 0.35;
                 fatRatio = 0.25;
                 carbRatio = 0.40;
                 break;
             case 'gain':
                 proteinRatio = 0.30;
                 fatRatio = 0.25;
-                carbRatio = 0.45; // Higher carbs for energy
+                carbRatio = 0.45;
                 break;
-            default: // maintain
+            default:
                 proteinRatio = 0.30;
                 fatRatio = 0.30;
                 carbRatio = 0.40;
         }
 
         return {
-            protein: Math.round((calories * proteinRatio) / 4), // 4 calories per gram
-            fat: Math.round((calories * fatRatio) / 9), // 9 calories per gram
-            carbs: Math.round((calories * carbRatio) / 4) // 4 calories per gram
+            protein: Math.round((calories * proteinRatio) / 4),
+            fat: Math.round((calories * fatRatio) / 9),
+            carbs: Math.round((calories * carbRatio) / 4),
+            proteinCalories: Math.round(calories * proteinRatio),
+            fatCalories: Math.round(calories * fatRatio),
+            carbCalories: Math.round(calories * carbRatio)
         };
     }
 
@@ -145,40 +144,49 @@ document.addEventListener('DOMContentLoaded', function() {
         const resultValue = document.getElementById('resultValue');
         const resultDescription = document.getElementById('resultDescription');
         const macroInfo = document.getElementById('macroInfo');
+        const resultContainer = document.getElementById('result');
 
-        resultValue.textContent = `${targetCalories.toFixed(0)} calories/day`;
+        if (resultValue) {
+            resultValue.textContent = `${Math.round(targetCalories)} calories/day`;
+        }
         
-        const goalText = getGoalText(goal, rate);
-        resultDescription.textContent = goalText;
-
-        macroInfo.innerHTML = `
-            <h4>Macronutrient Breakdown:</h4>
-            <div class="macro-grid">
-                <div class="macro-item">
-                    <h5>Protein</h5>
-                    <p>${macros.protein}g</p>
-                    <small>${Math.round(macros.protein * 4)} calories</small>
+        if (resultDescription) {
+            const goalText = getGoalText(goal, rate);
+            resultDescription.textContent = goalText;
+        }
+        
+        if (macroInfo) {
+            macroInfo.innerHTML = `
+                <h4>Macronutrient Breakdown:</h4>
+                <div class="macro-grid">
+                    <div class="macro-item protein">
+                        <h5>Protein</h5>
+                        <p class="macro-amount">${macros.protein}g</p>
+                        <small>${macros.proteinCalories} calories</small>
+                    </div>
+                    <div class="macro-item carbs">
+                        <h5>Carbohydrates</h5>
+                        <p class="macro-amount">${macros.carbs}g</p>
+                        <small>${macros.carbCalories} calories</small>
+                    </div>
+                    <div class="macro-item fat">
+                        <h5>Fat</h5>
+                        <p class="macro-amount">${macros.fat}g</p>
+                        <small>${macros.fatCalories} calories</small>
+                    </div>
                 </div>
-                <div class="macro-item">
-                    <h5>Carbohydrates</h5>
-                    <p>${macros.carbs}g</p>
-                    <small>${Math.round(macros.carbs * 4)} calories</small>
-                </div>
-                <div class="macro-item">
-                    <h5>Fat</h5>
-                    <p>${macros.fat}g</p>
-                    <small>${Math.round(macros.fat * 9)} calories</small>
-                </div>
-            </div>
-            <p class="maintenance-note">Maintenance calories: ${maintenance.toFixed(0)}/day</p>
-        `;
-
-        document.getElementById('result').style.display = 'block';
-        document.getElementById('result').scrollIntoView({ behavior: 'smooth', block: 'center' });
+                <p class="maintenance-note"><strong>Maintenance calories:</strong> ${Math.round(maintenance)}/day</p>
+            `;
+        }
+        
+        if (resultContainer) {
+            resultContainer.style.display = 'block';
+            resultContainer.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
     }
 
     function getGoalText(goal, rate) {
-        const rateKg = Math.abs(rate) / 1000 * 7; // Convert weekly calorie change to kg
+        const rateKg = Math.abs(rate) / 1000 * 7;
         if (goal === 'loss') {
             return `Weight Loss: ${rateKg.toFixed(1)} kg per week`;
         } else if (goal === 'gain') {
@@ -192,19 +200,46 @@ document.addEventListener('DOMContentLoaded', function() {
         clearError(input);
         const errorDiv = document.createElement('div');
         errorDiv.className = 'error-message';
-        errorDiv.textContent = message;
         errorDiv.style.color = '#ef4444';
         errorDiv.style.fontSize = '0.875rem';
         errorDiv.style.marginTop = '0.5rem';
+        errorDiv.textContent = message;
         input.parentNode.appendChild(errorDiv);
         input.style.borderColor = '#ef4444';
     }
 
     function clearError(input) {
         const errorDiv = input.parentNode.querySelector('.error-message');
-        if (errorDiv) {
-            errorDiv.remove();
-        }
+        if (errorDiv) errorDiv.remove();
         input.style.borderColor = '#e5e7eb';
     }
+
+    function clearErrors() {
+        document.querySelectorAll('.error-message').forEach(error => error.remove());
+        document.querySelectorAll('input').forEach(input => {
+            input.style.borderColor = '#e5e7eb';
+        });
+    }
+
+    function clearResults() {
+        const resultContainer = document.getElementById('result');
+        if (resultContainer) resultContainer.style.display = 'none';
+    }
+
+    // Initialize rate options
+    updateRateOptions('loss');
+
+    // Input validation
+    document.querySelectorAll('input[type="number"]').forEach(input => {
+        input.addEventListener('input', function() {
+            clearError(this);
+        });
+        
+        input.addEventListener('keypress', function(e) {
+            const charCode = e.which ? e.which : e.keyCode;
+            if (charCode > 31 && (charCode < 48 || charCode > 57) && charCode !== 46) {
+                e.preventDefault();
+            }
+        });
+    });
 });
