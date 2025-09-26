@@ -1,6 +1,8 @@
 // Water Intake Calculator Logic
 document.addEventListener('DOMContentLoaded', function() {
     const form = document.getElementById('waterForm');
+    if (!form) return;
+
     const systemSelect = document.getElementById('system');
     const weightInput = document.getElementById('weight');
     const weightUnit = document.getElementById('weightUnit');
@@ -15,6 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
             weightInput.placeholder = 'Enter weight in lbs';
         }
         clearResults();
+        clearErrors();
     });
 
     form.addEventListener('submit', function(e) {
@@ -51,11 +54,11 @@ document.addEventListener('DOMContentLoaded', function() {
         const minWeight = system === 'metric' ? 30 : 66;
         const maxWeight = system === 'metric' ? 300 : 660;
 
+        clearErrors();
+
         if (isNaN(weight) || weight < minWeight || weight > maxWeight) {
             showError(weightInput, `Please enter a weight between ${minWeight} and ${maxWeight} ${system === 'metric' ? 'kg' : 'lbs'}`);
             isValid = false;
-        } else {
-            clearError(weightInput);
         }
 
         return isValid;
@@ -65,8 +68,8 @@ document.addEventListener('DOMContentLoaded', function() {
         // Convert to kg if imperial
         const weightKg = system === 'metric' ? weight : weight * 0.453592;
         
-        // Base formula: 30-35 ml per kg of body weight
-        return weightKg * 0.033; // liters
+        // Base formula: 35 ml per kg of body weight
+        return weightKg * 0.035;
     }
 
     function applyAdjustments(baseWater, activity, climate, healthConditions) {
@@ -86,10 +89,10 @@ document.addEventListener('DOMContentLoaded', function() {
         healthConditions.forEach(condition => {
             switch(condition) {
                 case 'pregnant':
-                    adjustedWater += 0.3; // +300ml
+                    adjustedWater += 0.3;
                     break;
                 case 'breastfeeding':
-                    adjustedWater += 0.7; // +700ml
+                    adjustedWater += 0.7;
                     break;
                 case 'illness':
                     adjustedWater *= 1.2;
@@ -97,56 +100,54 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
 
-        return Math.max(adjustedWater, 1.5); // Minimum 1.5 liters
+        return Math.max(adjustedWater, 1.5);
     }
 
     function displayWaterResult(liters, ounces, cups, activity, climate, healthConditions) {
         const resultValue = document.getElementById('resultValue');
         const resultDescription = document.getElementById('resultDescription');
         const detailsInfo = document.getElementById('detailsInfo');
+        const resultContainer = document.getElementById('result');
 
-        resultValue.textContent = `${liters.toFixed(1)} liters`;
-        resultDescription.textContent = `Recommended Daily Water Intake`;
+        if (resultValue) {
+            resultValue.textContent = `${liters.toFixed(1)} liters`;
+        }
+        
+        if (resultDescription) {
+            resultDescription.textContent = `Recommended Daily Water Intake`;
+        }
+        
+        if (detailsInfo) {
+            const activityText = getActivityText(activity);
+            const climateText = getClimateText(climate);
 
-        const activityText = getActivityText(activity);
-        const climateText = getClimateText(climate);
-        const healthText = healthConditions.length > 0 ? 
-            `Health factors: ${healthConditions.join(', ')}` : 'No special health considerations';
-
-        detailsInfo.innerHTML = `
-            <h4>Water Intake Details</h4>
-            <div class="water-units">
-                <div class="unit-item">
-                    <h5>Liters</h5>
-                    <p>${liters.toFixed(1)} L</p>
+            detailsInfo.innerHTML = `
+                <h4>Water Intake Details</h4>
+                <div class="water-units">
+                    <div class="unit-item">
+                        <h5>Liters</h5>
+                        <p>${liters.toFixed(1)} L</p>
+                    </div>
+                    <div class="unit-item">
+                        <h5>Ounces</h5>
+                        <p>${ounces.toFixed(0)} oz</p>
+                    </div>
+                    <div class="unit-item">
+                        <h5>Cups</h5>
+                        <p>${cups.toFixed(0)} cups</p>
+                    </div>
                 </div>
-                <div class="unit-item">
-                    <h5>Ounces</h5>
-                    <p>${ounces.toFixed(0)} oz</p>
+                <div class="water-factors">
+                    <p><strong>Activity Level:</strong> ${activityText}</p>
+                    <p><strong>Climate:</strong> ${climateText}</p>
                 </div>
-                <div class="unit-item">
-                    <h5>Cups (8oz)</h5>
-                    <p>${cups.toFixed(0)} cups</p>
-                </div>
-            </div>
-            <div class="water-factors">
-                <p><strong>Activity Level:</strong> ${activityText}</p>
-                <p><strong>Climate:</strong> ${climateText}</p>
-                <p><strong>Health:</strong> ${healthText}</p>
-            </div>
-            <div class="water-tips">
-                <h5>Hydration Tips:</h5>
-                <ul>
-                    <li>Drink water consistently throughout the day</li>
-                    <li>Increase intake during and after exercise</li>
-                    <li>Monitor urine color (pale yellow is ideal)</li>
-                    <li>Listen to your body's thirst signals</li>
-                </ul>
-            </div>
-        `;
-
-        document.getElementById('result').style.display = 'block';
-        document.getElementById('result').scrollIntoView({ behavior: 'smooth', block: 'center' });
+            `;
+        }
+        
+        if (resultContainer) {
+            resultContainer.style.display = 'block';
+            resultContainer.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
     }
 
     function getActivityText(activity) {
@@ -173,23 +174,41 @@ document.addEventListener('DOMContentLoaded', function() {
         clearError(input);
         const errorDiv = document.createElement('div');
         errorDiv.className = 'error-message';
-        errorDiv.textContent = message;
         errorDiv.style.color = '#ef4444';
         errorDiv.style.fontSize = '0.875rem';
         errorDiv.style.marginTop = '0.5rem';
+        errorDiv.textContent = message;
         input.parentNode.appendChild(errorDiv);
         input.style.borderColor = '#ef4444';
     }
 
     function clearError(input) {
         const errorDiv = input.parentNode.querySelector('.error-message');
-        if (errorDiv) {
-            errorDiv.remove();
-        }
+        if (errorDiv) errorDiv.remove();
         input.style.borderColor = '#e5e7eb';
     }
 
-    function clearResults() {
-        document.getElementById('result').style.display = 'none';
+    function clearErrors() {
+        document.querySelectorAll('.error-message').forEach(error => error.remove());
+        document.querySelectorAll('input').forEach(input => {
+            input.style.borderColor = '#e5e7eb';
+        });
     }
+
+    function clearResults() {
+        const resultContainer = document.getElementById('result');
+        if (resultContainer) resultContainer.style.display = 'none';
+    }
+
+    // Input validation
+    weightInput.addEventListener('input', function() {
+        clearError(this);
+    });
+    
+    weightInput.addEventListener('keypress', function(e) {
+        const charCode = e.which ? e.which : e.keyCode;
+        if (charCode > 31 && (charCode < 48 || charCode > 57) && charCode !== 46) {
+            e.preventDefault();
+        }
+    });
 });
