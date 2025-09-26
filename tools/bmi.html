@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BMI Calculator - FitCalc</title>
+    <meta name="description" content="Free BMI calculator. Calculate your Body Mass Index and understand your weight category. Get personalized recommendations.">
+    
+    <!-- AdSense Script -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+    
     <link rel="stylesheet" href="../css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -14,13 +19,12 @@
             <div class="nav-container">
                 <div class="logo">
                     <i class="fas fa-dumbbell"></i>
-                    <a href="../index.html" style="text-decoration: none; color: inherit;">
-                        <span>FitCalc</span>
-                    </a>
+                    <a href="../index.html" style="text-decoration: none; color: inherit;">FitCalc</a>
                 </div>
                 <ul class="nav-menu">
                     <li><a href="../index.html" class="nav-link">Home</a></li>
-                    <li><a href="../index.html#tools" class="nav-link">Tools</a></li>
+                    <li><a href="../index.html#tools" class="nav-link">Calculators</a></li>
+                    <li><a href="../blog/index.html" class="nav-link">Blog</a></li>
                     <li><a href="../index.html#about" class="nav-link">About</a></li>
                     <li><a href="../legal/contact.html" class="nav-link">Contact</a></li>
                 </ul>
@@ -33,124 +37,89 @@
         </nav>
     </header>
 
-    <main class="calculator-container">
-        <div class="calculator-header">
-            <h1><i class="fas fa-weight-scale"></i> BMI Calculator</h1>
-            <p>Calculate your Body Mass Index and understand your weight category</p>
-        </div>
-
-        <form id="bmiForm">
-            <div class="form-group">
-                <label for="system">Measurement System</label>
-                <select id="system" class="system-select">
-                    <option value="metric">Metric (kg, cm)</option>
-                    <option value="imperial">Imperial (lbs, inches)</option>
-                </select>
-            </div>
-
-            <div class="form-group">
-                <label for="weight">Weight</label>
-                <div class="input-with-unit">
-                    <input type="number" id="weight" placeholder="Enter weight" required>
-                    <span id="weightUnit" class="input-unit">kg</span>
-                </div>
-            </div>
-
-            <div class="form-group">
-                <label for="height">Height</label>
-                <div class="input-with-unit">
-                    <input type="number" id="height" placeholder="Enter height" required>
-                    <span id="heightUnit" class="input-unit">cm</span>
-                </div>
-            </div>
-
-            <button type="submit" class="calculate-btn">
-                <i class="fas fa-calculator"></i> Calculate BMI
-            </button>
-        </form>
-
-        <div id="result" class="result-container">
-            <h3>Your BMI Result</h3>
-            <div id="resultValue" class="result-value">0.0</div>
-            <div id="resultCategory" class="result-category"></div>
-            <div id="resultDescription" class="result-description"></div>
-        </div>
-
-        <div class="calculator-info">
-            <h3><i class="fas fa-info-circle"></i> About BMI</h3>
-            <p>Body Mass Index (BMI) is a measure of body fat based on height and weight that applies to adult men and women.</p>
-            
-            <div class="bmi-chart">
-                <h4>BMI Categories:</h4>
-                <div class="chart-item underweight">
-                    <span class="chart-range">Below 18.5</span>
-                    <span class="chart-label">Underweight</span>
-                </div>
-                <div class="chart-item normal">
-                    <span class="chart-range">18.5 - 24.9</span>
-                    <span class="chart-label">Normal weight</span>
-                </div>
-                <div class="chart-item overweight">
-                    <span class="chart-range">25 - 29.9</span>
-                    <span class="chart-label">Overweight</span>
-                </div>
-                <div class="chart-item obese">
-                    <span class="chart-range">30 and above</span>
-                    <span class="chart-label">Obesity</span>
-                </div>
-            </div>
-
-            <div class="disclaimer">
-                <p><strong>Note:</strong> BMI is a screening tool and does not directly measure body fat. It may not be accurate for athletes, pregnant women, or the elderly.</p>
+    <!-- Ad Below Header -->
+    <section class="ad-section">
+        <div class="ad-container">
+            <div class="ad-label">Advertisement</div>
+            <div class="ad-banner horizontal">
+                <ins class="adsbygoogle"
+                     style="display:block"
+                     data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+                     data-ad-slot="XXXXXXXXXX"
+                     data-ad-format="auto"
+                     data-full-width-responsive="true"></ins>
             </div>
         </div>
+    </section>
+
+    <main class="main-content-with-ads">
+        <div class="content-area">
+            <div class="calculator-container">
+                <div class="calculator-header">
+                    <h1><i class="fas fa-weight-scale"></i> BMI Calculator</h1>
+                    <p>Calculate your Body Mass Index and understand your weight category</p>
+                </div>
+
+                <div class="calculator-content">
+                    <form id="bmiForm">
+                        <!-- BMI form content -->
+                    </form>
+
+                    <div id="result" class="result-container">
+                        <!-- Results content -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mid-content Ad -->
+            <section class="ad-section">
+                <div class="ad-container">
+                    <div class="ad-label">Advertisement</div>
+                    <div class="ad-banner rectangle">
+                        <ins class="adsbygoogle"
+                             style="display:block"
+                             data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+                             data-ad-slot="XXXXXXXXXX"
+                             data-ad-format="auto"
+                             data-full-width-responsive="true"></ins>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Sidebar Ads -->
+        <aside class="sidebar-ads">
+            <div class="sidebar-ad-unit">
+                <div class="ad-label">Advertisement</div>
+                <div class="ad-banner vertical">
+                    <ins class="adsbygoogle"
+                         style="display:block"
+                         data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+                         data-ad-slot="XXXXXXXXXX"
+                         data-ad-format="auto"
+                         data-full-width-responsive="true"></ins>
+                </div>
+            </div>
+        </aside>
     </main>
 
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <div class="logo">
-                        <i class="fas fa-dumbbell"></i>
-                        <span>FitCalc</span>
-                    </div>
-                    <p>Your trusted partner in fitness calculation and health optimization.</p>
-                </div>
-                
-                <div class="footer-section">
-                    <h3>Quick Links</h3>
-                    <ul>
-                        <li><a href="../index.html">Home</a></li>
-                        <li><a href="../index.html#tools">Calculators</a></li>
-                        <li><a href="../index.html#about">About</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-section">
-                    <h3>Legal</h3>
-                    <ul>
-                        <li><a href="../legal/privacy-policy.html">Privacy Policy</a></li>
-                        <li><a href="../legal/terms.html">Terms of Service</a></li>
-                        <li><a href="../legal/disclaimer.html">Disclaimer</a></li>
-                        <li><a href="../legal/contact.html">Contact Us</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-section">
-                    <h3>Connect</h3>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-linkedin"></i></a>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="footer-bottom">
-                <p>&copy; 2024 FitCalc. All rights reserved.</p>
+    <!-- Ad Above Footer -->
+    <section class="ad-section">
+        <div class="ad-container">
+            <div class="ad-label">Advertisement</div>
+            <div class="ad-banner horizontal">
+                <ins class="adsbygoogle"
+                     style="display:block"
+                     data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+                     data-ad-slot="XXXXXXXXXX"
+                     data-ad-format="auto"
+                     data-full-width-responsive="true"></ins>
             </div>
         </div>
+    </section>
+
+    <footer class="footer">
+        <!-- Footer content -->
     </footer>
 
     <script src="../js/main.js"></script>
