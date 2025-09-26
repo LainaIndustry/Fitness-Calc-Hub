@@ -3,8 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FitCalc - Your Fitness Calculator Hub</title>
+    <title>FitCalc - Fitness Calculators & Health Blog</title>
+    <meta name="description" content="Free fitness calculators for BMI, BMR, TDEE, calories, heart rate, and water intake. Expert health blog and fitness tips.">
+    
+    <!-- AdSense Script -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+    
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/blog.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
@@ -19,7 +25,8 @@
                 </div>
                 <ul class="nav-menu">
                     <li><a href="#home" class="nav-link">Home</a></li>
-                    <li><a href="#tools" class="nav-link">Tools</a></li>
+                    <li><a href="#tools" class="nav-link">Calculators</a></li>
+                    <li><a href="#blog" class="nav-link">Blog</a></li>
                     <li><a href="#about" class="nav-link">About</a></li>
                     <li><a href="legal/contact.html" class="nav-link">Contact</a></li>
                 </ul>
@@ -32,6 +39,21 @@
         </nav>
     </header>
 
+    <!-- Ad Below Header -->
+    <section class="ad-section">
+        <div class="ad-container">
+            <div class="ad-label">Advertisement</div>
+            <div class="ad-banner horizontal">
+                <ins class="adsbygoogle"
+                     style="display:block"
+                     data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+                     data-ad-slot="XXXXXXXXXX"
+                     data-ad-format="auto"
+                     data-full-width-responsive="true"></ins>
+            </div>
+        </div>
+    </section>
+
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="hero-content">
@@ -39,168 +61,96 @@
             <p>Calculate, track, and optimize your health metrics with our comprehensive fitness calculators</p>
             <div class="hero-buttons">
                 <a href="#tools" class="btn btn-primary">Get Started</a>
-                <a href="#about" class="btn btn-secondary">Learn More</a>
-            </div>
-        </div>
-        <div class="hero-animation">
-            <div class="floating-icon">
-                <i class="fas fa-heartbeat"></i>
-            </div>
-            <div class="floating-icon">
-                <i class="fas fa-weight"></i>
-            </div>
-            <div class="floating-icon">
-                <i class="fas fa-running"></i>
+                <a href="#blog" class="btn btn-secondary">Read Blog</a>
             </div>
         </div>
     </section>
 
-    <!-- Tools Section -->
-    <section id="tools" class="tools-section">
-        <div class="container">
-            <h2>Fitness Calculators</h2>
-            <p class="section-subtitle">Choose from our range of specialized calculators</p>
+    <!-- Main Content with Sidebar Ads -->
+    <main class="main-content-with-ads">
+        <div class="content-area">
+            <!-- Tools Section -->
+            <section id="tools" class="tools-section">
+                <h2>Fitness Calculators</h2>
+                <p class="section-subtitle">Accurate calculations for your health goals</p>
+                
+                <div class="tools-grid">
+                    <!-- Calculator cards here -->
+                </div>
+            </section>
+
+            <!-- Mid-page Ad -->
+            <section class="ad-section">
+                <div class="ad-container">
+                    <div class="ad-label">Advertisement</div>
+                    <div class="ad-banner rectangle">
+                        <ins class="adsbygoogle"
+                             style="display:block"
+                             data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+                             data-ad-slot="XXXXXXXXXX"
+                             data-ad-format="auto"
+                             data-full-width-responsive="true"></ins>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Blog Section -->
+            <section id="blog" class="blog-section">
+                <h2>Latest from Our Blog</h2>
+                <p class="section-subtitle">Expert fitness tips and health advice</p>
+                
+                <div class="blog-grid">
+                    <!-- Blog posts here -->
+                </div>
+            </section>
+        </div>
+
+        <!-- Sidebar Ads -->
+        <aside class="sidebar-ads">
+            <div class="sidebar-ad-unit">
+                <div class="ad-label">Advertisement</div>
+                <div class="ad-banner vertical">
+                    <ins class="adsbygoogle"
+                         style="display:block"
+                         data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+                         data-ad-slot="XXXXXXXXXX"
+                         data-ad-format="auto"
+                         data-full-width-responsive="true"></ins>
+                </div>
+            </div>
             
-            <div class="tools-grid">
-                <div class="tool-card">
-                    <div class="tool-icon">
-                        <i class="fas fa-weight-scale"></i>
-                    </div>
-                    <h3>BMI Calculator</h3>
-                    <p>Calculate your Body Mass Index and understand your weight category</p>
-                    <a href="tools/bmi.html" class="tool-link">Calculate Now <i class="fas fa-arrow-right"></i></a>
-                </div>
-
-                <div class="tool-card">
-                    <div class="tool-icon">
-                        <i class="fas fa-fire"></i>
-                    </div>
-                    <h3>BMR Calculator</h3>
-                    <p>Determine your Basal Metabolic Rate - calories burned at rest</p>
-                    <a href="tools/bmr.html" class="tool-link">Calculate Now <i class="fas fa-arrow-right"></i></a>
-                </div>
-
-                <div class="tool-card">
-                    <div class="tool-icon">
-                        <i class="fas fa-bolt"></i>
-                    </div>
-                    <h3>TDEE Calculator</h3>
-                    <p>Calculate Total Daily Energy Expenditure for optimal nutrition</p>
-                    <a href="tools/tdee.html" class="tool-link">Calculate Now <i class="fas fa-arrow-right"></i></a>
-                </div>
-
-                <div class="tool-card">
-                    <div class="tool-icon">
-                        <i class="fas fa-apple-whole"></i>
-                    </div>
-                    <h3>Calorie Calculator</h3>
-                    <p>Track your daily calorie needs based on your goals</p>
-                    <a href="tools/calorie.html" class="tool-link">Calculate Now <i class="fas fa-arrow-right"></i></a>
-                </div>
-
-                <div class="tool-card">
-                    <div class="tool-icon">
-                        <i class="fas fa-heart-pulse"></i>
-                    </div>
-                    <h3>Heart Rate Calculator</h3>
-                    <p>Monitor your target heart rate zones for effective workouts</p>
-                    <a href="tools/heart-rate.html" class="tool-link">Calculate Now <i class="fas fa-arrow-right"></i></a>
-                </div>
-
-                <div class="tool-card">
-                    <div class="tool-icon">
-                        <i class="fas fa-tint"></i>
-                    </div>
-                    <h3>Water Intake Calculator</h3>
-                    <p>Calculate your daily hydration needs for optimal health</p>
-                    <a href="tools/water.html" class="tool-link">Calculate Now <i class="fas fa-arrow-right"></i></a>
+            <div class="sidebar-ad-unit">
+                <div class="ad-label">Advertisement</div>
+                <div class="ad-banner vertical">
+                    <ins class="adsbygoogle"
+                         style="display:block"
+                         data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+                         data-ad-slot="XXXXXXXXXX"
+                         data-ad-format="auto"
+                         data-full-width-responsive="true"></ins>
                 </div>
             </div>
-        </div>
-    </section>
+        </aside>
+    </main>
 
-    <!-- About Section -->
-    <section id="about" class="about-section">
-        <div class="container">
-            <div class="about-content">
-                <div class="about-text">
-                    <h2>About FitCalc</h2>
-                    <p>FitCalc is your comprehensive fitness companion, providing accurate calculations and insights to help you achieve your health goals. Our tools are designed by fitness experts and backed by scientific research.</p>
-                    
-                    <div class="features-list">
-                        <div class="feature">
-                            <i class="fas fa-check"></i>
-                            <span>Accurate calculations based on scientific formulas</span>
-                        </div>
-                        <div class="feature">
-                            <i class="fas fa-check"></i>
-                            <span>User-friendly interface for all fitness levels</span>
-                        </div>
-                        <div class="feature">
-                            <i class="fas fa-check"></i>
-                            <span>Mobile-responsive design</span>
-                        </div>
-                        <div class="feature">
-                            <i class="fas fa-check"></i>
-                            <span>Free to use forever</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="about-image">
-                    <div class="image-placeholder">
-                        <i class="fas fa-chart-line"></i>
-                    </div>
-                </div>
+    <!-- Ad Above Footer -->
+    <section class="ad-section">
+        <div class="ad-container">
+            <div class="ad-label">Advertisement</div>
+            <div class="ad-banner horizontal">
+                <ins class="adsbygoogle"
+                     style="display:block"
+                     data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+                     data-ad-slot="XXXXXXXXXX"
+                     data-ad-format="auto"
+                     data-full-width-responsive="true"></ins>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <div class="logo">
-                        <i class="fas fa-dumbbell"></i>
-                        <span>FitCalc</span>
-                    </div>
-                    <p>Your trusted partner in fitness calculation and health optimization.</p>
-                </div>
-                
-                <div class="footer-section">
-                    <h3>Quick Links</h3>
-                    <ul>
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#tools">Calculators</a></li>
-                        <li><a href="#about">About</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-section">
-                    <h3>Legal</h3>
-                    <ul>
-                        <li><a href="legal/privacy-policy.html">Privacy Policy</a></li>
-                        <li><a href="legal/terms.html">Terms of Service</a></li>
-                        <li><a href="legal/disclaimer.html">Disclaimer</a></li>
-                        <li><a href="legal/contact.html">Contact Us</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-section">
-                    <h3>Connect</h3>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-linkedin"></i></a>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="footer-bottom">
-                <p>&copy; 2025 FitCalc. All rights reserved.</p>
-            </div>
-        </div>
+        <!-- Footer content -->
     </footer>
 
     <script src="js/main.js"></script>
