@@ -1,1 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Fitness-Calc-Hub</title>
+    <meta name="description" content="Get in touch with Fitness-Calc-Hub. We'd love to hear your feedback, questions, or suggestions.">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/logo.png" alt="Fitness-Calc-Hub Logo">
+                    <span>Fitness-Calc-Hub</span>
+                </a>
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="tools/bmi.html">Tools</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html" class="active">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="mobile-menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
 
+    <!-- AdSense Banner -->
+    <section class="adsense-banner">
+        <div class="container">
+            <div class="ad-placeholder">
+                <p>AdSense Banner (728x90)</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="calculator-container">
+        <h1>Contact Us</h1>
+        <p>We'd love to hear from you! Whether you have questions, suggestions, or feedback, our team is here to help.</p>
+        
+        <div class="calculator-card">
+            <form id="contact-form" class="calculator-form">
+                <div class="form-group">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" class="form-control" placeholder="Enter your name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" class="form-control" placeholder="Enter your email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="subject">Subject</label>
+                    <select id="subject" class="form-control" required>
+                        <option value="">Select a subject</option>
+                        <option value="general">General Inquiry</option>
+                        <option value="feedback">Feedback</option>
+                        <option value="technical">Technical Issue</option>
+                        <option value="suggestion">Feature Suggestion</option>
+                        <option value="partnership">Partnership Opportunity</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" class="form-control" rows="6" placeholder="Enter your message" required></textarea>
+                </div>
+                
+                <button type="submit" class="btn btn-primary">Send Message</button>
+            </form>
+            
+            <div id="contact-success" style="display: none; text-align: center; padding: 20px; background-color: #d4edda; color: #155724; border-radius: var(--radius); margin-top: 20px;">
+                <h3>Thank You!</h3>
+                <p>Your message has been sent successfully. We'll get back to you as soon as possible.</p>
+            </div>
+        </div>
+        
+        <div class="calculator-card" style="margin-top: 30px;">
+            <h2>Other Ways to Reach Us</h2>
+            <div class="features-grid">
+                <div class="feature">
+                    <div class="feature-icon">📧</div>
+                    <h3>Email</h3>
+                    <p>support@fitness-calchub.com</p>
+                </div>
+                
+                <div class="feature">
+                    <div class="feature-icon">💬</div>
+                    <h3>Feedback</h3>
+                    <p>We value your suggestions for improving our tools</p>
+                </div>
+                
+                <div class="feature">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Response Time</h3>
+                    <p>We typically respond within 24-48 hours</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AdSense Banner -->
+    <section class="adsense-banner">
+        <div class="container">
+            <div class="ad-placeholder">
+                <p>AdSense Banner (728x90)</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="logo">
+                        <a href="index.html">
+                            <img src="images/logo.png" alt="Fitness-Calc-Hub Logo">
+                            <span>Fitness-Calc-Hub</span>
+                        </a>
+                    </div>
+                    <p>Your ultimate destination for accurate fitness calculations and health information.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Tools</h3>
+                    <ul>
+                        <li><a href="tools/bmi.html">BMI Calculator</a></li>
+                        <li><a href="tools/bmr.html">BMR Calculator</a></li>
+                        <li><a href="tools/tdee.html">TDEE Calculator</a></li>
+                        <li><a href="tools/calorie.html">Calorie Calculator</a></li>
+                        <li><a href="tools/heart-rate.html">Heart Rate Calculator</a></li>
+                        <li><a href="tools/water.html">Water Intake Calculator</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Legal</h3>
+                    <ul>
+                        <li><a href="legal/terms.html">Terms of Service</a></li>
+                        <li><a href="legal/privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="legal/disclaimer.html">Disclaimer</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 Fitness-Calc-Hub. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        // Contact form handling
+        document.addEventListener('DOMContentLoaded', function() {
+            const contactForm = document.getElementById('contact-form');
+            const successMessage = document.getElementById('contact-success');
+            
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    // Simple form validation
+                    const name = document.getElementById('name').value;
+                    const email = document.getElementById('email').value;
+                    const subject = document.getElementById('subject').value;
+                    const message = document.getElementById('message').value;
+                    
+                    if (name && email && subject && message) {
+                        // In a real application, you would send this data to a server
+                        // For this example, we'll just show the success message
+                        contactForm.style.display = 'none';
+                        successMessage.style.display = 'block';
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>
