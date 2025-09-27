@@ -12,30 +12,31 @@
 </head>
 <body>
     <!-- Header -->
-    <header class="header">
-        <div class="container">
-            <div class="logo">
-                <a href="index.html">
-                    <img src="images/logo.png" alt="Fitness-Calc-Hub Logo">
-                    <span>Fitness-Calc-Hub</span>
-                </a>
-            </div>
-            <nav class="nav">
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="tools/bmi.html">Tools</a></li>
-                    <li><a href="blog.html">Blog</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="contact.html" class="active">Contact</a></li>
-                </ul>
-            </nav>
-            <div class="mobile-menu-btn">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
+    <!-- Header -->
+<header class="header">
+    <div class="container">
+        <div class="logo">
+            <a href="index.html">
+                <img src="images/logo.png" alt="Fitness-Calc-Hub Logo">
+                <!-- Remove the text span to avoid duplication -->
+            </a>
         </div>
-    </header>
+        <nav class="nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="tools/bmi.html">Tools</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="mobile-menu-btn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+</header>
 
     <!-- AdSense Banner -->
     <section class="adsense-banner">
@@ -130,10 +131,9 @@
                     <div class="logo">
                         <a href="index.html">
                             <img src="images/logo.png" alt="Fitness-Calc-Hub Logo">
-                            <span>Fitness-Calc-Hub</span>
                         </a>
                     </div>
-                    <p>Your ultimate destination for accurate fitness calculations and health information.</p>
+                    <p>Your ultimate destination for accurate fitness calculations. Track, analyze, and optimize your health journey with our comprehensive calculator suite.</p>
                 </div>
                 
                 <div class="footer-section">
@@ -174,31 +174,5 @@
     </footer>
 
     <script src="js/main.js"></script>
-    <script>
-        // Contact form handling
-        document.addEventListener('DOMContentLoaded', function() {
-            const contactForm = document.getElementById('contact-form');
-            const successMessage = document.getElementById('contact-success');
-            
-            if (contactForm) {
-                contactForm.addEventListener('submit', function(e) {
-                    e.preventDefault();
-                    
-                    // Simple form validation
-                    const name = document.getElementById('name').value;
-                    const email = document.getElementById('email').value;
-                    const subject = document.getElementById('subject').value;
-                    const message = document.getElementById('message').value;
-                    
-                    if (name && email && subject && message) {
-                        // In a real application, you would send this data to a server
-                        // For this example, we'll just show the success message
-                        contactForm.style.display = 'none';
-                        successMessage.style.display = 'block';
-                    }
-                });
-            }
-        });
-    </script>
 </body>
 </html>
