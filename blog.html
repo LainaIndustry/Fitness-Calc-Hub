@@ -1,1 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitness Blog - Fitness-Calc-Hub</title>
+    <meta name="description" content="Read our latest fitness articles, tips, and guides to help you achieve your health and wellness goals.">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/blog.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/logo.png" alt="Fitness-Calc-Hub Logo">
+                    <span>Fitness-Calc-Hub</span>
+                </a>
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="tools/bmi.html">Tools</a></li>
+                    <li><a href="blog.html" class="active">Blog</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="mobile-menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
 
+    <!-- Blog Hero -->
+    <section class="blog-hero">
+        <div class="container">
+            <h1>Fitness Blog</h1>
+            <p>Expert tips, guides, and insights to help you on your fitness journey</p>
+        </div>
+    </section>
+
+    <!-- AdSense Banner -->
+    <section class="adsense-banner">
+        <div class="container">
+            <div class="ad-placeholder">
+                <p>AdSense Banner (728x90)</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Content -->
+    <section class="blog-container">
+        <div class="blog-filters">
+            <button class="filter-btn active" data-filter="all">All Articles</button>
+            <button class="filter-btn" data-filter="nutrition">Nutrition</button>
+            <button class="filter-btn" data-filter="workouts">Workouts</button>
+            <button class="filter-btn" data-filter="weight-loss">Weight Loss</button>
+            <button class="filter-btn" data-filter="wellness">Wellness</button>
+        </div>
+
+        <div class="blog-articles">
+            <!-- Article 1 -->
+            <article class="blog-article" data-category="weight-loss">
+                <div class="article-image">
+                    <img src="https://via.placeholder.com/400x250/4CAF50/FFFFFF?text=Weight+Loss" alt="10 Tips for Effective Weight Loss">
+                </div>
+                <div class="article-content">
+                    <div class="article-meta">
+                        <span class="article-category">Weight Loss</span>
+                        <span class="article-date">March 15, 2023</span>
+                    </div>
+                    <h2><a href="blog-single.html">10 Science-Backed Tips for Effective Weight Loss</a></h2>
+                    <p>Discover proven strategies that can help you lose weight effectively and maintain your results long-term without extreme diets or unsustainable practices.</p>
+                    <div class="article-footer">
+                        <div class="article-author">
+                            <img src="https://via.placeholder.com/30/4CAF50/FFFFFF?text=J" alt="Author" class="author-avatar">
+                            <span class="author-name">Dr. Jane Smith</span>
+                        </div>
+                        <span class="read-time">8 min read</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Article 2 -->
+            <article class="blog-article" data-category="nutrition">
+                <div class="article-image">
+                    <img src="https://via.placeholder.com/400x250/2196F3/FFFFFF?text=Nutrition" alt="Nutrition Guide for Athletes">
+                </div>
+                <div class="article-content">
+                    <div class="article-meta">
+                        <span class="article-category">Nutrition</span>
+                        <span class="article-date">March 10, 2023</span>
+                    </div>
+                    <h2><a href="blog-single.html">The Ultimate Nutrition Guide for Athletes</a></h2>
+                    <p>Learn how to fuel your body properly for optimal performance, recovery, and results whether you're a weekend warrior or competitive athlete.</p>
+                    <div class="article-footer">
+                        <div class="article-author">
+                            <img src="https://via.placeholder.com/30/2196F3/FFFFFF?text=M" alt="Author" class="author-avatar">
+                            <span class="author-name">Mike Johnson</span>
+                        </div>
+                        <span class="read-time">12 min read</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Article 3 -->
+            <article class="blog-article" data-category="workouts">
+                <div class="article-image">
+                    <img src="https://via.placeholder.com/400x250/FF9800/FFFFFF?text=Workout" alt="Perfect Workout Routine">
+                </div>
+                <div class="article-content">
+                    <div class="article-meta">
+                        <span class="article-category">Workouts</span>
+                        <span class="article-date">March 5, 2023</span>
+                    </div>
+                    <h2><a href="blog-single.html">Building the Perfect Workout Routine for Your Goals</a></h2>
+                    <p>Create a customized workout plan that fits your specific goals, schedule, and fitness level for maximum efficiency and results.</p>
+                    <div class="article-footer">
+                        <div class="article-author">
+                            <img src="https://via.placeholder.com/30/FF9800/FFFFFF?text=S" alt="Author" class="author-avatar">
+                            <span class="author-name">Sarah Chen</span>
+                        </div>
+                        <span class="read-time">10 min read</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Article 4 -->
+            <article class="blog-article" data-category="wellness">
+                <div class="article-image">
+                    <img src="https://via.placeholder.com/400x250/9C27B0/FFFFFF?text=Wellness" alt="Importance of Sleep">
+                </div>
+                <div class="article-content">
+                    <div class="article-meta">
+                        <span class="article-category">Wellness</span>
+                        <span class="article-date">February 28, 2023</span>
+                    </div>
+                    <h2><a href="blog-single.html">The Critical Role of Sleep in Fitness and Recovery</a></h2>
+                    <p>Understand why quality sleep is just as important as your workouts and nutrition for achieving your fitness goals.</p>
+                    <div class="article-footer">
+                        <div class="article-author">
+                            <img src="https://via.placeholder.com/30/9C27B0/FFFFFF?text=R" alt="Author" class="author-avatar">
+                            <span class="author-name">Dr. Robert Kim</span>
+                        </div>
+                        <span class="read-time">6 min read</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Article 5 -->
+            <article class="blog-article" data-category="nutrition">
+                <div class="article-image">
+                    <img src="https://via.placeholder.com/400x250/4CAF50/FFFFFF?text=Hydration" alt="Hydration Guide">
+                </div>
+                <div class="article-content">
+                    <div class="article-meta">
+                        <span class="article-category">Nutrition</span>
+                        <span class="article-date">February 22, 2023</span>
+                    </div>
+                    <h2><a href="blog-single.html">Hydration 101: How Much Water Do You Really Need?</a></h2>
+                    <p>Learn about the importance of proper hydration and how to calculate your individual water needs based on your activity level and environment.</p>
+                    <div class="article-footer">
+                        <div class="article-author">
+                            <img src="https://via.placeholder.com/30/4CAF50/FFFFFF?text=L" alt="Author" class="author-avatar">
+                            <span class="author-name">Lisa Wang</span>
+                        </div>
+                        <span class="read-time">7 min read</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Article 6 -->
+            <article class="blog-article" data-category="workouts">
+                <div class="article-image">
+                    <img src="https://via.placeholder.com/400x250/2196F3/FFFFFF?text=Cardio" alt="Cardio vs Strength">
+                </div>
+                <div class="article-content">
+                    <div class="article-meta">
+                        <span class="article-category">Workouts</span>
+                        <span class="article-date">February 18, 2023</span>
+                    </div>
+                    <h2><a href="blog-single.html">Cardio vs Strength Training: Finding the Right Balance</a></h2>
+                    <p>Discover the benefits of both cardio and strength training and learn how to create the perfect balance for your fitness goals.</p>
+                    <div class="article-footer">
+                        <div class="article-author">
+                            <img src="https://via.placeholder.com/30/2196F3/FFFFFF?text=T" alt="Author" class="author-avatar">
+                            <span class="author-name">Tom Wilson</span>
+                        </div>
+                        <span class="read-time">9 min read</span>
+                    </div>
+                </div>
+            </article>
+        </div>
+
+        <!-- Pagination -->
+        <div class="text-center" style="margin-top: 50px;">
+            <div class="pagination">
+                <a href="#" class="btn btn-outline">← Previous</a>
+                <a href="#" class="btn btn-primary">1</a>
+                <a href="#" class="btn btn-outline">2</a>
+                <a href="#" class="btn btn-outline">3</a>
+                <a href="#" class="btn btn-outline">Next →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter-section">
+        <div class="container">
+            <h2>Stay Updated with Fitness Tips</h2>
+            <p>Subscribe to our newsletter and get the latest fitness articles delivered to your inbox.</p>
+            <form class="newsletter-form">
+                <input type="email" class="newsletter-input" placeholder="Enter your email address" required>
+                <button type="submit" class="btn btn-primary">Subscribe</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- AdSense Banner -->
+    <section class="adsense-banner">
+        <div class="container">
+            <div class="ad-placeholder">
+                <p>AdSense Banner (728x90)</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="logo">
+                        <a href="index.html">
+                            <img src="images/logo.png" alt="Fitness-Calc-Hub Logo">
+                            <span>Fitness-Calc-Hub</span>
+                        </a>
+                    </div>
+                    <p>Your ultimate destination for accurate fitness calculations and health information.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Tools</h3>
+                    <ul>
+                        <li><a href="tools/bmi.html">BMI Calculator</a></li>
+                        <li><a href="tools/bmr.html">BMR Calculator</a></li>
+                        <li><a href="tools/tdee.html">TDEE Calculator</a></li>
+                        <li><a href="tools/calorie.html">Calorie Calculator</a></li>
+                        <li><a href="tools/heart-rate.html">Heart Rate Calculator</a></li>
+                        <li><a href="tools/water.html">Water Intake Calculator</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Legal</h3>
+                    <ul>
+                        <li><a href="legal/terms.html">Terms of Service</a></li>
+                        <li><a href="legal/privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="legal/disclaimer.html">Disclaimer</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 Fitness-Calc-Hub. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        // Blog filter functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const articles = document.querySelectorAll('.blog-article');
+            
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    // Remove active class from all buttons
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    // Add active class to clicked button
+                    this.classList.add('active');
+                    
+                    const filter = this.getAttribute('data-filter');
+                    
+                    articles.forEach(article => {
+                        if (filter === 'all' || article.getAttribute('data-category') === filter) {
+                            article.style.display = 'block';
+                        } else {
+                            article.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
