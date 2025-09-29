@@ -3,75 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Heart Rate Calculator - Fitness Calculator Hub</title>
-    <meta name="description" content="Calculate your heart rate training zones with our free heart rate calculator. Optimize your workouts for better results.">
+    <title>Heart Rate Calculator - Fitness-Calc-Hub</title>
+    <meta name="description" content="Calculate your target heart rate zones for optimal workout intensity.">
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
     <!-- Header -->
     <header>
         <div class="container header-container">
-            <div class="logo">
-                <a href="../index.html">Fitness Calculator Hub</a>
-            </div>
-            <button class="mobile-menu-btn">☰</button>
-            <nav class="nav-menu">
-                <ul>
-                    <li><a href="../index.html">Home</a></li>
-                    <li><a href="index.html">Tools</a></li>
-                    <li><a href="../blog.html">Blog</a></li>
-                    <li><a href="../about.html">About</a></li>
-                    <li><a href="../legal/contact.html">Contact</a></li>
-                </ul>
-            </nav>
+            <a href="../index.html" class="logo">Fitness<span>Calc</span>Hub</a>
+            <div class="mobile-toggle">☰</div>
+            <ul class="nav-menu">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="index.html">Tools</a></li>
+                <li><a href="../blog.html">Blog</a></li>
+                <li><a href="../about.html">About</a></li>
+                <li><a href="../legal/contact.html">Contact</a></li>
+            </ul>
         </div>
     </header>
 
-    <!-- Calculator Section -->
-    <section class="container">
-        <div class="calculator-container">
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
             <h1>Heart Rate Calculator</h1>
-            <p>Calculate your heart rate training zones to optimize your workouts and track your fitness progress.</p>
-            
-            <form id="heart-rate-form" class="calculator-form">
-                <div class="form-group">
-                    <label for="age">Age</label>
-                    <input type="number" id="age" name="age" min="1" max="120" required>
-                    <span>years</span>
+            <p>Calculate your target heart rate zones for optimal workout intensity and cardiovascular health.</p>
+        </div>
+    </section>
+
+    <!-- Calculator Section -->
+    <section class="section">
+        <div class="container">
+            <div class="calculator card">
+                <h2 class="section-title">Calculate Your Heart Rate Zones</h2>
+                <form id="heart-rate-form">
+                    <div class="form-group">
+                        <label for="age">Age (years)</label>
+                        <input type="number" id="age" class="form-control" placeholder="Enter your age" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="resting-hr">Resting Heart Rate (optional)</label>
+                        <input type="number" id="resting-hr" class="form-control" placeholder="Enter your resting HR (bpm)">
+                    </div>
+                    <button type="submit" class="btn btn-accent" style="width: 100%;">Calculate Heart Rate Zones</button>
+                </form>
+                <div class="result" id="heart-rate-result">
+                    <h3>Your Heart Rate Zones</h3>
+                    <div id="zones-container"></div>
                 </div>
-                
-                <button type="submit" class="btn">Calculate Heart Rate Zones</button>
-                <button type="button" id="heart-rate-reset" class="btn" style="background: #6c757d;">Reset</button>
-            </form>
-            
-            <div id="heart-rate-results" class="results">
-                <h3>Your Heart Rate Training Zones</h3>
-                <div class="result-value"></div>
-                <div class="result-description"></div>
             </div>
-            
-            <div style="margin-top: 2rem;">
+
+            <!-- Heart Rate Information -->
+            <div class="card" style="margin-top: 40px;">
                 <h3>Understanding Heart Rate Zones</h3>
-                <p>Heart rate zones help you train at the right intensity for your fitness goals. Each zone corresponds to a different percentage of your maximum heart rate.</p>
+                <p>Heart rate zones help you train at the right intensity for your fitness goals. Different zones provide different benefits.</p>
                 
                 <h4>Heart Rate Zones:</h4>
-                <ul>
-                    <li><strong>Zone 1 (50-60%):</strong> Very light intensity, good for warm-up, recovery, and beginners</li>
-                    <li><strong>Zone 2 (60-70%):</strong> Light intensity, improves basic endurance and fat burning</li>
-                    <li><strong>Zone 3 (70-80%):</strong> Moderate intensity, improves aerobic capacity</li>
-                    <li><strong>Zone 4 (80-90%):</strong> Hard intensity, improves anaerobic capacity and threshold</li>
-                    <li><strong>Zone 5 (90-100%):</strong> Maximum intensity, for interval training and peak performance</li>
+                <ul style="list-style-type: disc; margin-left: 20px; margin-top: 15px;">
+                    <li><strong>Zone 1 (50-60%):</strong> Very light - Warm-up, recovery, fat burning</li>
+                    <li><strong>Zone 2 (60-70%):</strong> Light - Basic endurance, improves metabolism</li>
+                    <li><strong>Zone 3 (70-80%):</strong> Moderate - Aerobic fitness, efficient cardio</li>
+                    <li><strong>Zone 4 (80-90%):</strong> Hard - Anaerobic threshold, performance</li>
+                    <li><strong>Zone 5 (90-100%):</strong> Maximum - Peak performance, short bursts</li>
                 </ul>
                 
-                <h4>Training Benefits by Zone:</h4>
-                <ul>
-                    <li><strong>Zone 1-2:</strong> Builds aerobic base, promotes fat burning</li>
-                    <li><strong>Zone 3:</strong> Improves cardiovascular fitness</li>
-                    <li><strong>Zone 4:</strong> Increases lactate threshold</li>
-                    <li><strong>Zone 5:</strong> Develops maximum performance and speed</li>
-                </ul>
-                
-                <p><strong>Note:</strong> These calculations use the common formula (220 - age) for maximum heart rate, which is an estimate. Individual maximum heart rates can vary.</p>
+                <p style="margin-top: 15px;">Your maximum heart rate is estimated as 220 minus your age. For more accurate results, consider getting a professional assessment.</p>
             </div>
         </div>
     </section>
@@ -80,56 +76,42 @@
     <footer>
         <div class="container">
             <div class="footer-content">
-                <div class="footer-section">
-                    <h3>Fitness Calculator Hub</h3>
-                    <p>Your all-in-one solution for fitness calculations and health tracking.</p>
+                <div class="footer-column">
+                    <h3>Fitness-Calc-Hub</h3>
+                    <p>Your ultimate destination for accurate fitness calculations and health information.</p>
                 </div>
-                <div class="footer-section">
-                    <h3>Quick Links</h3>
-                    <ul>
-                        <li><a href="../index.html">Home</a></li>
-                        <li><a href="index.html">Tools</a></li>
-                        <li><a href="../blog.html">Blog</a></li>
-                        <li><a href="../about.html">About</a></li>
+                <div class="footer-column">
+                    <h3>Tools</h3>
+                    <ul class="footer-links">
+                        <li><a href="bmi.html">BMI Calculator</a></li>
+                        <li><a href="bmr.html">BMR Calculator</a></li>
+                        <li><a href="tdee.html">TDEE Calculator</a></li>
+                        <li><a href="heart-rate.html">Heart Rate Calculator</a></li>
                     </ul>
                 </div>
-                <div class="footer-section">
+                <div class="footer-column">
+                    <h3>Resources</h3>
+                    <ul class="footer-links">
+                        <li><a href="../blog.html">Blog</a></li>
+                        <li><a href="../about.html">About Us</a></li>
+                        <li><a href="../legal/contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
                     <h3>Legal</h3>
-                    <ul>
+                    <ul class="footer-links">
                         <li><a href="../legal/privacy-policy.html">Privacy Policy</a></li>
                         <li><a href="../legal/terms.html">Terms of Service</a></li>
                         <li><a href="../legal/disclaimer.html">Disclaimer</a></li>
-                        <li><a href="../legal/contact.html">Contact</a></li>
                     </ul>
                 </div>
             </div>
             <div class="copyright">
-                <p>&copy; 2023 Fitness Calculator Hub. All rights reserved.</p>
+                <p>&copy; 2023 Fitness-Calc-Hub. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
-    <script src="../js/main.js"></script>
     <script src="../js/heart-rate.js"></script>
-    <script>
-    // Update unit labels based on selection
-    document.addEventListener('DOMContentLoaded', function() {
-        const unitSelect = document.getElementById('unit');
-        if (unitSelect) {
-            unitSelect.addEventListener('change', function() {
-                const unit = this.value;
-                const weightUnit = document.getElementById('weight-unit');
-                const heightUnit = document.getElementById('height-unit');
-                
-                if (weightUnit) {
-                    weightUnit.textContent = unit === 'metric' ? 'kg' : 'lbs';
-                }
-                if (heightUnit) {
-                    heightUnit.textContent = unit === 'metric' ? 'cm' : 'inches';
-                }
-            });
-        }
-    });
-</script>
 </body>
 </html>
