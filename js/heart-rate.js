@@ -1,76 +1,67 @@
 // Heart Rate Calculator
 document.addEventListener('DOMContentLoaded', function() {
     const heartRateForm = document.getElementById('heart-rate-form');
-    const heartRateResults = document.getElementById('heart-rate-results');
     
     if (heartRateForm) {
         heartRateForm.addEventListener('submit', function(e) {
             e.preventDefault();
-            calculateHeartRateZones();
+            
+            const age = parseInt(document.getElementById('age').value);
+            const restingHR = document.getElementById('resting-hr').value ? parseInt(document.getElementById('resting-hr').value) : null;
+            
+            if (age) {
+                // Calculate maximum heart rate
+                const maxHR = 220 - age;
+                
+                // Calculate heart rate reserve if resting HR is provided
+                const hrReserve = restingHR ? maxHR - restingHR : null;
+                
+                const zones = [
+                    { name: 'Zone 1 (Very Light)', min: 0.5, max: 0.6, description: 'Warm-up, recovery, fat burning' },
+                    { name: 'Zone 2 (Light)', min: 0.6, max: 0.7, description: 'Basic endurance, improves metabolism' },
+                    { name: 'Zone 3 (Moderate)', min: 0.7, max: 0.8, description: 'Aerobic fitness, efficient cardio' },
+                    { name: 'Zone 4 (Hard)', min: 0.8, max: 0.9, description: 'Anaerobic threshold, performance' },
+                    { name: 'Zone 5 (Maximum)', min: 0.9, max: 1.0, description: 'Peak performance, short bursts' }
+                ];
+                
+                let zonesHTML = '';
+                
+                zones.forEach(zone => {
+                    let minBPM, maxBPM;
+                    
+                    if (restingHR && hrReserve) {
+                        // Using Karvonen formula for more accuracy
+                        minBPM = Math.round((hrReserve * zone.min) + restingHR);
+                        maxBPM = Math.round((hrReserve * zone.max) + restingHR);
+                    } else {
+                        // Simple percentage of max HR
+                        minBPM = Math.round(maxHR * zone.min);
+                        maxBPM = Math.round(maxHR * zone.max);
+                    }
+                    
+                    zonesHTML += `
+                        <div style="margin-bottom: 15px; padding: 15px; background: #f8f9fa; border-radius: 5px;">
+                            <strong>${zone.name}</strong><br>
+                            ${minBPM} - ${maxBPM} BPM<br>
+                            <small>${zone.description}</small>
+                        </div>
+                    `;
+                });
+                
+                const resultElement = document.getElementById('heart-rate-result');
+                const zonesContainer = document.getElementById('zones-container');
+                
+                zonesContainer.innerHTML = `
+                    <p><strong>Maximum Heart Rate:</strong> ${maxHR} BPM</p>
+                    ${restingHR ? `<p><strong>Resting Heart Rate:</strong> ${restingHR} BPM</p>` : ''}
+                    <div style="margin-top: 20px;">
+                        <h4>Target Heart Rate Zones:</h4>
+                        ${zonesHTML}
+                    </div>
+                `;
+                
+                resultElement.style.display = 'block';
+            }
         });
-        
-        // Add reset functionality
-        const resetBtn = document.getElementById('heart-rate-reset');
-        if (resetBtn) {
-            resetBtn.addEventListener('click', function() {
-                resetForm('heart-rate-form', 'heart-rate-results');
-            });
-        }
     }
 });
-
-function calculateHeartRateZones() {
-    const age = parseInt(document.getElementById('age').value);
-    
-    // Validation
-    if (!validateNumber(age, 1, 120)) {
-        alert('Please enter a valid age');
-        return;
-    }
-    
-    // Calculate maximum heart rate (using the common 220 - age formula)
-    const maxHR = 220 - age;
-    
-    // Calculate heart rate zones
-    const zones = {
-        warmUp: {
-            min: Math.round(maxHR * 0.5),
-            max: Math.round(maxHR * 0.6),
-            description: 'Very light, good for recovery and warm-up'
-        },
-        fatBurning: {
-            min: Math.round(maxHR * 0.6),
-            max: Math.round(maxHR * 0.7),
-            description: 'Light, improves basic endurance and fat burning'
-        },
-        aerobic: {
-            min: Math.round(maxHR * 0.7),
-            max: Math.round(maxHR * 0.8),
-            description: 'Moderate, improves aerobic capacity'
-        },
-        anaerobic: {
-            min: Math.round(maxHR * 0.8),
-            max: Math.round(maxHR * 0.9),
-            description: 'Hard, improves anaerobic capacity and threshold'
-        },
-        maximum: {
-            min: Math.round(maxHR * 0.9),
-            max: maxHR,
-            description: 'Maximum, for interval training and peak performance'
-        }
-    };
-    
-    // Show results
-    const resultText = `Your maximum heart rate is ${maxHR} BPM`;
-    const descriptionText = `<p>Based on your age, here are your heart rate training zones:</p>
-                            <ul>
-                                <li><strong>Zone 1 (Warm-up):</strong> ${zones.warmUp.min} - ${zones.warmUp.max} BPM<br>${zones.warmUp.description}</li>
-                                <li><strong>Zone 2 (Fat Burning):</strong> ${zones.fatBurning.min} - ${zones.fatBurning.max} BPM<br>${zones.fatBurning.description}</li>
-                                <li><strong>Zone 3 (Aerobic):</strong> ${zones.aerobic.min} - ${zones.aerobic.max} BPM<br>${zones.aerobic.description}</li>
-                                <li><strong>Zone 4 (Anaerobic):</strong> ${zones.anaerobic.min} - ${zones.anaerobic.max} BPM<br>${zones.anaerobic.description}</li>
-                                <li><strong>Zone 5 (Maximum):</strong> ${zones.maximum.min} - ${zones.maximum.max} BPM<br>${zones.maximum.description}</li>
-                            </ul>
-                            <p><strong>Note:</strong> These calculations are estimates. Individual maximum heart rates can vary. Consult with a healthcare professional before starting any new exercise program.</p>`;
-    
-    showResults('heart-rate-results', resultText, descriptionText);
-}
