@@ -1,74 +1,39 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calorie Calculator - Fitness-Calc-Hub</title>
-    <meta name="description" content="Calculate your daily calorie needs for weight loss, maintenance, or gain. Free and accurate calorie calculator.">
+    <title>Calorie Calculator - Fitness Calculator Hub</title>
+    <meta name="description" content="Calculate your daily calorie needs based on your fitness goals with our free calorie calculator.">
     <link rel="stylesheet" href="../css/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- Header -->
-    <!-- Header -->
-<header class="header">
-    <div class="container">
-        <div class="logo">
-            <a href="index.html">
-                <img src="images/logo.png" alt="Fitness-Calc-Hub Logo">
-                <!-- Remove the text span to avoid duplication -->
-            </a>
-        </div>
-        <nav class="nav">
-    <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="tools/index.html">Tools</a></li> <!-- Changed from tools/bmi.html -->
-        <li><a href="blog.html">Blog</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="contact.html">Contact</a></li>
-    </ul>
-</nav>
-        <div class="mobile-menu-btn">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-    </div>
-</header>
-
-    <!-- AdSense Banner -->
-    <section class="adsense-banner">
-        <div class="container">
-            <div class="ad-placeholder">
-                <p>AdSense Banner (728x90)</p>
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <a href="../index.html">Fitness Calculator Hub</a>
             </div>
+            <button class="mobile-menu-btn">☰</button>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="index.html">Tools</a></li>
+                    <li><a href="../blog.html">Blog</a></li>
+                    <li><a href="../about.html">About</a></li>
+                    <li><a href="../legal/contact.html">Contact</a></li>
+                </ul>
+            </nav>
         </div>
-    </section>
+    </header>
 
     <!-- Calculator Section -->
-    <section class="calculator-container">
-        <h1>Calorie Calculator</h1>
-        <p>Calculate your daily calorie needs based on your goals - whether you want to lose weight, maintain, or gain weight.</p>
-        
-        <div class="calculator-card">
+    <section class="container">
+        <div class="calculator-container">
+            <h1>Calorie Calculator</h1>
+            <p>Calculate your daily calorie needs based on your personal information and fitness goals.</p>
+            
             <form id="calorie-form" class="calculator-form">
-                <div class="form-group">
-                    <label>Unit System</label>
-                    <div class="radio-group">
-                        <div class="radio-option">
-                            <input type="radio" id="metric" name="unit" value="metric" checked>
-                            <label for="metric">Metric (cm, kg)</label>
-                        </div>
-                        <div class="radio-option">
-                            <input type="radio" id="imperial" name="unit" value="imperial">
-                            <label for="imperial">Imperial (inches, lbs)</label>
-                        </div>
-                    </div>
-                </div>
-                
                 <div class="form-group">
                     <label>Gender</label>
                     <div class="radio-group">
@@ -85,136 +50,132 @@
                 
                 <div class="form-group">
                     <label for="age">Age</label>
-                    <input type="number" id="age" class="form-control" placeholder="Enter your age" min="15" max="100" required>
+                    <input type="number" id="age" name="age" min="1" max="120" required>
+                    <span>years</span>
                 </div>
                 
                 <div class="form-group">
-                    <label for="height">Height (cm)</label>
-                    <input type="number" id="height" class="form-control" placeholder="Enter height in cm" min="50" max="250" required>
+                    <label for="unit">Unit System</label>
+                    <select id="unit" name="unit">
+                        <option value="metric">Metric (kg, cm)</option>
+                        <option value="imperial">Imperial (lbs, inches)</option>
+                    </select>
                 </div>
                 
                 <div class="form-group">
-                    <label for="weight">Weight (kg)</label>
-                    <input type="number" id="weight" class="form-control" placeholder="Enter weight in kg" min="20" max="300" required>
+                    <label for="weight">Weight</label>
+                    <input type="number" id="weight" name="weight" step="0.1" required>
+                    <span id="weight-unit">kg</span>
+                </div>
+                
+                <div class="form-group">
+                    <label for="height">Height</label>
+                    <input type="number" id="height" name="height" step="0.1" required>
+                    <span id="height-unit">cm</span>
                 </div>
                 
                 <div class="form-group">
                     <label for="activity">Activity Level</label>
-                    <select id="activity" class="form-control" required>
-                        <option value="1.2">Sedentary (little or no exercise)</option>
-                        <option value="1.375">Lightly Active (light exercise 1-3 days/week)</option>
-                        <option value="1.55">Moderately Active (moderate exercise 3-5 days/week)</option>
-                        <option value="1.725">Very Active (hard exercise 6-7 days/week)</option>
-                        <option value="1.9">Extremely Active (very hard exercise, physical job)</option>
+                    <select id="activity" name="activity" required>
+                        <option value="sedentary">Sedentary (little or no exercise)</option>
+                        <option value="light">Light (exercise 1-3 times/week)</option>
+                        <option value="moderate" selected>Moderate (exercise 3-5 times/week)</option>
+                        <option value="active">Active (exercise 6-7 times/week)</option>
+                        <option value="veryActive">Very Active (hard exercise daily)</option>
                     </select>
                 </div>
                 
                 <div class="form-group">
-                    <label for="goal">Weight Goal</label>
-                    <select id="goal" class="form-control" required>
-                        <option value="extreme_loss">Extreme Weight Loss</option>
-                        <option value="loss">Weight Loss</option>
-                        <option value="mild_loss">Mild Weight Loss</option>
-                        <option value="maintain" selected>Maintain Weight</option>
-                        <option value="gain">Weight Gain</option>
+                    <label for="goal">Fitness Goal</label>
+                    <select id="goal" name="goal" required>
+                        <option value="maintain">Maintain Weight</option>
+                        <option value="mildLoss">Mild Weight Loss (0.25 kg/week)</option>
+                        <option value="loss">Weight Loss (0.5 kg/week)</option>
+                        <option value="extremeLoss">Extreme Weight Loss (1 kg/week)</option>
+                        <option value="mildGain">Mild Weight Gain (0.25 kg/week)</option>
+                        <option value="gain">Weight Gain (0.5 kg/week)</option>
                     </select>
                 </div>
                 
-                <button type="submit" class="btn btn-primary">Calculate Calories</button>
+                <button type="submit" class="btn">Calculate Calories</button>
+                <button type="button" id="calorie-reset" class="btn" style="background: #6c757d;">Reset</button>
             </form>
             
-            <div id="calorie-result" class="result-container" style="display: none;">
+            <div id="calorie-results" class="results">
                 <h3>Your Calorie Needs</h3>
-                <div class="result-value" id="calorie-value">0</div>
-                <div class="result-unit" id="goal-description">calories per day</div>
-                
-                <div class="result-description">
-                    <h4>Understanding Your Calorie Needs</h4>
-                    <p>Your daily calorie target is based on your Total Daily Energy Expenditure (TDEE) adjusted for your specific weight goal:</p>
-                    
-                    <ul>
-                        <li><strong>Extreme Weight Loss:</strong> 40% deficit from TDEE</li>
-                        <li><strong>Weight Loss:</strong> 20% deficit from TDEE</li>
-                        <li><strong>Mild Weight Loss:</strong> 10% deficit from TDEE</li>
-                        <li><strong>Weight Maintenance:</strong> Equal to your TDEE</li>
-                        <li><strong>Weight Gain:</strong> 10% surplus above TDEE</li>
-                    </ul>
-                    
-                    <h4>Tips for Success</h4>
-                    <ul>
-                        <li>Track your food intake using a food diary or app</li>
-                        <li>Focus on nutrient-dense foods rather than just calories</li>
-                        <li>Be consistent but allow for flexibility</li>
-                        <li>Adjust your intake based on progress and how you feel</li>
-                    </ul>
-                    
-                    <p><strong>Note:</strong> These are estimates. Individual needs may vary. Consult a healthcare professional for personalized advice.</p>
-                </div>
+                <div class="result-value"></div>
+                <div class="result-description"></div>
             </div>
-        </div>
-    </section>
-
-    <!-- AdSense Banner -->
-    <section class="adsense-banner">
-        <div class="container">
-            <div class="ad-placeholder">
-                <p>AdSense Banner (728x90)</p>
+            
+            <div style="margin-top: 2rem;">
+                <h3>Understanding Your Calorie Needs</h3>
+                <p>Your daily calorie needs are calculated based on your Basal Metabolic Rate (BMR) and your activity level, then adjusted based on your fitness goals.</p>
+                
+                <h4>Activity Level Definitions:</h4>
+                <ul>
+                    <li><strong>Sedentary:</strong> Little or no exercise</li>
+                    <li><strong>Light:</strong> Light exercise 1-3 times per week</li>
+                    <li><strong>Moderate:</strong> Moderate exercise 3-5 times per week</li>
+                    <li><strong>Active:</strong> Hard exercise 6-7 times per week</li>
+                    <li><strong>Very Active:</strong> Very hard exercise, physical job, or training twice a day</li>
+                </ul>
+                
+                <p><strong>Remember:</strong> These calculations provide estimates. Individual calorie needs can vary based on metabolism, body composition, and other factors.</p>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="footer">
+    <footer>
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <div class="logo">
-                        <a href="../index.html">
-                            <img src="../images/logo.png" alt="Fitness-Calc-Hub Logo">
-                            <span>Fitness-Calc-Hub</span>
-                        </a>
-                    </div>
-                    <p>Your ultimate destination for accurate fitness calculations and health information.</p>
+                    <h3>Fitness Calculator Hub</h3>
+                    <p>Your all-in-one solution for fitness calculations and health tracking.</p>
                 </div>
-                
                 <div class="footer-section">
-                    <h3>Tools</h3>
+                    <h3>Quick Links</h3>
                     <ul>
-                        <li><a href="bmi.html">BMI Calculator</a></li>
-                        <li><a href="bmr.html">BMR Calculator</a></li>
-                        <li><a href="tdee.html">TDEE Calculator</a></li>
-                        <li><a href="calorie.html" class="active">Calorie Calculator</a></li>
-                        <li><a href="heart-rate.html">Heart Rate Calculator</a></li>
-                        <li><a href="water.html">Water Intake Calculator</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-section">
-                    <h3>Company</h3>
-                    <ul>
-                        <li><a href="../about.html">About Us</a></li>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="index.html">Tools</a></li>
                         <li><a href="../blog.html">Blog</a></li>
-                        <li><a href="../contact.html">Contact</a></li>
+                        <li><a href="../about.html">About</a></li>
                     </ul>
                 </div>
-                
                 <div class="footer-section">
                     <h3>Legal</h3>
                     <ul>
-                        <li><a href="../legal/terms.html">Terms of Service</a></li>
                         <li><a href="../legal/privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="../legal/terms.html">Terms of Service</a></li>
                         <li><a href="../legal/disclaimer.html">Disclaimer</a></li>
+                        <li><a href="../legal/contact.html">Contact</a></li>
                     </ul>
                 </div>
             </div>
-            
-            <div class="footer-bottom">
-                <p>&copy; 2023 Fitness-Calc-Hub. All rights reserved.</p>
+            <div class="copyright">
+                <p>&copy; 2023 Fitness Calculator Hub. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
     <script src="../js/main.js"></script>
     <script src="../js/calorie.js"></script>
+    
+    <script>
+        // Update unit labels based on selection
+        document.getElementById('unit').addEventListener('change', function() {
+            const unit = this.value;
+            const weightUnit = document.getElementById('weight-unit');
+            const heightUnit = document.getElementById('height-unit');
+            
+            if (unit === 'metric') {
+                weightUnit.textContent = 'kg';
+                heightUnit.textContent = 'cm';
+            } else {
+                weightUnit.textContent = 'lbs';
+                heightUnit.textContent = 'inches';
+            }
+        });
+    </script>
 </body>
 </html>
