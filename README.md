@@ -1,14 +1,21 @@
-# FitCalc - Fitness Calculator Hub
+# Fitness Calculator Hub
 
-A comprehensive fitness calculator website with multiple tools for health and fitness calculations.
+A comprehensive collection of fitness calculators to help you track and improve your health and fitness.
 
 ## Features
 
-- **BMI Calculator**: Body Mass Index calculation
-- **BMR Calculator**: Basal Metabolic Rate calculation  
-- **TDEE Calculator**: Total Daily Energy Expenditure
-- **Calorie Calculator**: Daily calorie needs
-- **Heart Rate Calculator**: Target heart rate zones
-- **Water Intake Calculator**: Daily hydration needs
+- **BMI Calculator**: Calculate your Body Mass Index
+- **BMR Calculator**: Determine your Basal Metabolic Rate
+- **TDEE Calculator**: Calculate your Total Daily Energy Expenditure
+- **Calorie Calculator**: Find your daily calorie needs based on goals
+- **Water Intake Calculator**: Determine optimal daily water consumption
+- **Heart Rate Calculator**: Calculate your heart rate training zones
+
+## Technologies Used
+
+- HTML5
+- CSS3
+- JavaScript (Vanilla)
+- Responsive Design
 
 ## Project Structure
