@@ -3,71 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BMR Calculator - Fitness-Calc-Hub</title>
-    <meta name="description" content="Calculate your Basal Metabolic Rate (BMR) - the calories your body needs at rest. Free and accurate BMR calculator.">
+    <title>BMR Calculator - Fitness Calculator Hub</title>
+    <meta name="description" content="Calculate your Basal Metabolic Rate (BMR) with our free BMR calculator. Find out how many calories your body needs at rest.">
     <link rel="stylesheet" href="../css/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- Header -->
-   <!-- Header -->
-<header class="header">
-    <div class="container">
-        <div class="logo">
-            <a href="index.html">
-                <img src="images/logo.png" alt="Fitness-Calc-Hub Logo">
-                <!-- Remove the text span to avoid duplication -->
-            </a>
-        </div>
-        <nav class="nav">
-    <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="tools/index.html">Tools</a></li> <!-- Changed from tools/bmi.html -->
-        <li><a href="blog.html">Blog</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="contact.html">Contact</a></li>
-    </ul>
-</nav>
-        <div class="mobile-menu-btn">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-    </div>
-</header>
-
-    <!-- AdSense Banner -->
-    <section class="adsense-banner">
-        <div class="container">
-            <div class="ad-placeholder">
-                <p>AdSense Banner (728x90)</p>
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <a href="../index.html">Fitness Calculator Hub</a>
             </div>
+            <button class="mobile-menu-btn">☰</button>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="index.html">Tools</a></li>
+                    <li><a href="../blog.html">Blog</a></li>
+                    <li><a href="../about.html">About</a></li>
+                    <li><a href="../legal/contact.html">Contact</a></li>
+                </ul>
+            </nav>
         </div>
-    </section>
+    </header>
 
     <!-- Calculator Section -->
-    <section class="calculator-container">
-        <h1>BMR Calculator</h1>
-        <p>Calculate your Basal Metabolic Rate (BMR) - the number of calories your body needs to perform basic life-sustaining functions.</p>
-        
-        <div class="calculator-card">
+    <section class="container">
+        <div class="calculator-container">
+            <h1>BMR Calculator</h1>
+            <p>Basal Metabolic Rate (BMR) is the number of calories your body needs to accomplish its most basic (basal) life-sustaining functions.</p>
+            
             <form id="bmr-form" class="calculator-form">
-                <div class="form-group">
-                    <label>Unit System</label>
-                    <div class="radio-group">
-                        <div class="radio-option">
-                            <input type="radio" id="metric" name="unit" value="metric" checked>
-                            <label for="metric">Metric (cm, kg)</label>
-                        </div>
-                        <div class="radio-option">
-                            <input type="radio" id="imperial" name="unit" value="imperial">
-                            <label for="imperial">Imperial (inches, lbs)</label>
-                        </div>
-                    </div>
-                </div>
-                
                 <div class="form-group">
                     <label>Gender</label>
                     <div class="radio-group">
@@ -84,105 +50,109 @@
                 
                 <div class="form-group">
                     <label for="age">Age</label>
-                    <input type="number" id="age" class="form-control" placeholder="Enter your age" min="15" max="100" required>
+                    <input type="number" id="age" name="age" min="1" max="120" required>
+                    <span>years</span>
                 </div>
                 
                 <div class="form-group">
-                    <label for="height">Height (cm)</label>
-                    <input type="number" id="height" class="form-control" placeholder="Enter height in cm" min="50" max="250" required>
+                    <label for="unit">Unit System</label>
+                    <select id="unit" name="unit">
+                        <option value="metric">Metric (kg, cm)</option>
+                        <option value="imperial">Imperial (lbs, inches)</option>
+                    </select>
                 </div>
                 
                 <div class="form-group">
-                    <label for="weight">Weight (kg)</label>
-                    <input type="number" id="weight" class="form-control" placeholder="Enter weight in kg" min="20" max="300" required>
+                    <label for="weight">Weight</label>
+                    <input type="number" id="weight" name="weight" step="0.1" required>
+                    <span id="weight-unit">kg</span>
                 </div>
                 
-                <button type="submit" class="btn btn-primary">Calculate BMR</button>
+                <div class="form-group">
+                    <label for="height">Height</label>
+                    <input type="number" id="height" name="height" step="0.1" required>
+                    <span id="height-unit">cm</span>
+                </div>
+                
+                <button type="submit" class="btn">Calculate BMR</button>
+                <button type="button" id="bmr-reset" class="btn" style="background: #6c757d;">Reset</button>
             </form>
             
-            <div id="bmr-result" class="result-container" style="display: none;">
+            <div id="bmr-results" class="results">
                 <h3>Your BMR Result</h3>
-                <div class="result-value" id="bmr-value">0</div>
-                <div class="result-unit">calories per day</div>
-                
-                <div class="result-description">
-                    <h4>What is BMR?</h4>
-                    <p>Your Basal Metabolic Rate (BMR) is the number of calories your body needs to perform basic life-sustaining functions like breathing, circulation, and cell production while at complete rest.</p>
-                    
-                    <h4>How to Use Your BMR</h4>
-                    <ul>
-                        <li><strong>Weight Maintenance:</strong> Multiply your BMR by your activity level to find your Total Daily Energy Expenditure (TDEE)</li>
-                        <li><strong>Weight Loss:</strong> Create a calorie deficit below your TDEE</li>
-                        <li><strong>Weight Gain:</strong> Create a calorie surplus above your TDEE</li>
-                    </ul>
-                    
-                    <p><strong>Note:</strong> BMR is an estimate. Individual variations may occur based on muscle mass, genetics, and other factors.</p>
-                </div>
+                <div class="result-value"></div>
+                <div class="result-description"></div>
             </div>
-        </div>
-    </section>
-
-    <!-- AdSense Banner -->
-    <section class="adsense-banner">
-        <div class="container">
-            <div class="ad-placeholder">
-                <p>AdSense Banner (728x90)</p>
+            
+            <div style="margin-top: 2rem;">
+                <h3>About BMR</h3>
+                <p>Your Basal Metabolic Rate represents the number of calories your body would burn if you stayed in bed all day. It's the energy needed for basic bodily functions like breathing, circulation, and cell production.</p>
+                
+                <h4>Factors that affect BMR:</h4>
+                <ul>
+                    <li><strong>Body size and composition:</strong> Larger bodies and more muscle mass increase BMR</li>
+                    <li><strong>Age:</strong> BMR typically decreases with age</li>
+                    <li><strong>Gender:</strong> Men usually have higher BMR than women</li>
+                    <li><strong>Genetics:</strong> Some people are born with faster metabolisms</li>
+                    <li><strong>Hormones:</strong> Thyroid function and other hormones affect BMR</li>
+                </ul>
+                
+                <p><strong>Note:</strong> This calculator uses the Mifflin-St Jeor Equation, which is considered the most accurate BMR formula for most people.</p>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="footer">
+    <footer>
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <div class="logo">
-                        <a href="../index.html">
-                            <img src="../images/logo.png" alt="Fitness-Calc-Hub Logo">
-                            <span>Fitness-Calc-Hub</span>
-                        </a>
-                    </div>
-                    <p>Your ultimate destination for accurate fitness calculations and health information.</p>
+                    <h3>Fitness Calculator Hub</h3>
+                    <p>Your all-in-one solution for fitness calculations and health tracking.</p>
                 </div>
-                
                 <div class="footer-section">
-                    <h3>Tools</h3>
+                    <h3>Quick Links</h3>
                     <ul>
-                        <li><a href="bmi.html">BMI Calculator</a></li>
-                        <li><a href="bmr.html" class="active">BMR Calculator</a></li>
-                        <li><a href="tdee.html">TDEE Calculator</a></li>
-                        <li><a href="calorie.html">Calorie Calculator</a></li>
-                        <li><a href="heart-rate.html">Heart Rate Calculator</a></li>
-                        <li><a href="water.html">Water Intake Calculator</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-section">
-                    <h3>Company</h3>
-                    <ul>
-                        <li><a href="../about.html">About Us</a></li>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="index.html">Tools</a></li>
                         <li><a href="../blog.html">Blog</a></li>
-                        <li><a href="../contact.html">Contact</a></li>
+                        <li><a href="../about.html">About</a></li>
                     </ul>
                 </div>
-                
                 <div class="footer-section">
                     <h3>Legal</h3>
                     <ul>
-                        <li><a href="../legal/terms.html">Terms of Service</a></li>
                         <li><a href="../legal/privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="../legal/terms.html">Terms of Service</a></li>
                         <li><a href="../legal/disclaimer.html">Disclaimer</a></li>
+                        <li><a href="../legal/contact.html">Contact</a></li>
                     </ul>
                 </div>
             </div>
-            
-            <div class="footer-bottom">
-                <p>&copy; 2023 Fitness-Calc-Hub. All rights reserved.</p>
+            <div class="copyright">
+                <p>&copy; 2023 Fitness Calculator Hub. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
     <script src="../js/main.js"></script>
     <script src="../js/bmr.js"></script>
+    
+    <script>
+        // Update unit labels based on selection
+        document.getElementById('unit').addEventListener('change', function() {
+            const unit = this.value;
+            const weightUnit = document.getElementById('weight-unit');
+            const heightUnit = document.getElementById('height-unit');
+            
+            if (unit === 'metric') {
+                weightUnit.textContent = 'kg';
+                heightUnit.textContent = 'cm';
+            } else {
+                weightUnit.textContent = 'lbs';
+                heightUnit.textContent = 'inches';
+            }
+        });
+    </script>
 </body>
 </html>
