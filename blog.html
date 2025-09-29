@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fitness Blog - Fitness Calculator Hub</title>
-    <meta name="description" content="Read our fitness blog for tips, guides, and information about health, nutrition, and using our fitness calculators effectively.">
+    <title>Fitness Blog - Fitness-Calc-Hub</title>
+    <meta name="description" content="Read our latest articles on fitness, nutrition, health calculators, and wellness tips.">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/blog.css">
 </head>
@@ -12,123 +12,117 @@
     <!-- Header -->
     <header>
         <div class="container header-container">
-            <div class="logo">
-                <a href="index.html">Fitness Calculator Hub</a>
-            </div>
-            <button class="mobile-menu-btn">☰</button>
-            <nav class="nav-menu">
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="tools/index.html">Tools</a></li>
-                    <li><a href="blog.html">Blog</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="legal/contact.html">Contact</a></li>
-                </ul>
-            </nav>
+            <a href="index.html" class="logo">Fitness<span>Calc</span>Hub</a>
+            <div class="mobile-toggle">☰</div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="tools/index.html">Tools</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="legal/contact.html">Contact</a></li>
+            </ul>
         </div>
     </header>
 
-    <!-- Blog Section -->
-    <section class="container blog-container">
-        <div class="blog-layout">
-            <div class="blog-main">
-                <h1>Fitness & Health Blog</h1>
-                
-                <!-- Blog Post 1 -->
-                <article class="blog-post">
-                    <h2>Understanding BMI: What Your Number Really Means</h2>
-                    <div class="post-meta">
-                        <span>Published on December 15, 2023</span> • <span>5 min read</span>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Fitness & Health Blog</h1>
+            <p>Expert articles, tips, and insights to help you achieve your fitness goals and maintain a healthy lifestyle.</p>
+        </div>
+    </section>
+
+    <!-- Blog Content -->
+    <section class="section">
+        <div class="container">
+            <div class="blog-content">
+                <!-- Featured Article -->
+                <div class="featured-article card">
+                    <div class="featured-content">
+                        <span class="featured-badge">Featured</span>
+                        <h2>Understanding BMI: What It Really Tells You About Your Health</h2>
+                        <div class="blog-meta">
+                            <span>By Dr. Sarah Johnson</span>
+                            <span>June 15, 2023</span>
+                            <span>8 min read</span>
+                        </div>
+                        <p class="blog-excerpt">Body Mass Index (BMI) has been a standard health assessment tool for decades, but how much does it really tell us about our overall health? In this comprehensive guide, we explore the strengths and limitations of BMI, when it's most useful, and what other metrics you should consider for a complete picture of your health...</p>
+                        <a href="#" class="btn btn-accent">Read Full Article</a>
                     </div>
-                    <p>Body Mass Index (BMI) is one of the most commonly used tools to assess whether a person has a healthy body weight. But what does your BMI number actually tell you, and what are its limitations?</p>
-                    
-                    <p>BMI is calculated by dividing your weight in kilograms by your height in meters squared. While it's a useful screening tool, it doesn't account for factors like muscle mass, bone density, and distribution of fat.</p>
-                    
-                    <h3>BMI Categories:</h3>
-                    <ul>
-                        <li>Underweight: BMI less than 18.5</li>
-                        <li>Normal weight: BMI 18.5 to 24.9</li>
-                        <li>Overweight: BMI 25 to 29.9</li>
-                        <li>Obesity: BMI 30 or greater</li>
-                    </ul>
-                    
-                    <p>Remember that BMI is just one indicator of health. Athletes with high muscle mass may have a high BMI but low body fat, while older adults may have a normal BMI but high body fat percentage.</p>
-                    
-                    <a href="#" class="read-more">Read full article →</a>
-                </article>
-                
-                <!-- Blog Post 2 -->
-                <article class="blog-post">
-                    <h2>How to Use Your BMR and TDEE for Weight Management</h2>
-                    <div class="post-meta">
-                        <span>Published on December 10, 2023</span> • <span>7 min read</span>
-                    </div>
-                    <p>Understanding your Basal Metabolic Rate (BMR) and Total Daily Energy Expenditure (TDEE) is crucial for effective weight management. These numbers form the foundation of any successful nutrition plan.</p>
-                    
-                    <p>Your BMR represents the calories your body needs at complete rest, while your TDEE accounts for your activity level. The difference between these numbers and your calorie intake determines whether you lose, maintain, or gain weight.</p>
-                    
-                    <h3>Practical Applications:</h3>
-                    <ul>
-                        <li>Weight loss: Consume 300-500 calories less than your TDEE</li>
-                        <li>Weight maintenance: Match your calorie intake to your TDEE</li>
-                        <li>Weight gain: Consume 300-500 calories more than your TDEE</li>
-                    </ul>
-                    
-                    <p>Use our BMR and TDEE calculators to get your personalized numbers and create a nutrition plan that aligns with your goals.</p>
-                    
-                    <a href="#" class="read-more">Read full article →</a>
-                </article>
-                
-                <!-- Blog Post 3 -->
-                <article class="blog-post">
-                    <h2>The Importance of Hydration: Beyond the 8-Glass Rule</h2>
-                    <div class="post-meta">
-                        <span>Published on December 5, 2023</span> • <span>4 min read</span>
-                    </div>
-                    <p>We've all heard the advice to drink eight glasses of water per day, but hydration needs are highly individual. Factors like body weight, activity level, climate, and overall health all influence how much water you need.</p>
-                    
-                    <p>Proper hydration affects nearly every system in your body, from cognitive function to joint health and temperature regulation. Even mild dehydration can impact your energy levels and physical performance.</p>
-                    
-                    <h3>Signs of Adequate Hydration:</h3>
-                    <ul>
-                        <li>Light yellow urine</li>
-                        <li>Regular urination</li>
-                        <li>Moist mouth and skin</li>
-                        <li>Consistent energy levels</li>
-                    </ul>
-                    
-                    <p>Use our water intake calculator to get a personalized recommendation based on your weight and activity level, but remember to listen to your body's thirst signals as well.</p>
-                    
-                    <a href="#" class="read-more">Read full article →</a>
-                </article>
-            </div>
-            
-            <div class="blog-sidebar">
-                <div class="sidebar-widget">
-                    <h3>About This Blog</h3>
-                    <p>Welcome to the Fitness Calculator Hub blog! Here we share evidence-based information about fitness, nutrition, and how to use our calculators effectively.</p>
                 </div>
-                
-                <div class="sidebar-widget">
-                    <h3>Popular Calculators</h3>
-                    <ul>
-                        <li><a href="tools/bmi.html">BMI Calculator</a></li>
-                        <li><a href="tools/bmr.html">BMR Calculator</a></li>
-                        <li><a href="tools/tdee.html">TDEE Calculator</a></li>
-                        <li><a href="tools/calorie.html">Calorie Calculator</a></li>
-                        <li><a href="tools/water.html">Water Intake Calculator</a></li>
-                    </ul>
+
+                <!-- Blog Grid -->
+                <div class="blog-grid">
+                    <article class="card blog-card">
+                        <h3>How to Calculate Your TDEE for Effective Weight Management</h3>
+                        <div class="blog-meta">
+                            <span>By Mike Chen</span>
+                            <span>June 8, 2023</span>
+                            <span>6 min read</span>
+                        </div>
+                        <p class="blog-excerpt">Your Total Daily Energy Expenditure (TDEE) is the key to understanding your calorie needs. Learn how to calculate it accurately and use it to achieve your weight goals...</p>
+                        <a href="#" class="btn">Read More</a>
+                    </article>
+
+                    <article class="card blog-card">
+                        <h3>The Science of Hydration: How Much Water Do You Really Need?</h3>
+                        <div class="blog-meta">
+                            <span>By Dr. Amanda Rodriguez</span>
+                            <span>June 1, 2023</span>
+                            <span>7 min read</span>
+                        </div>
+                        <p class="blog-excerpt">Hydration affects every aspect of your health and performance. Discover the latest research on optimal water intake and debunk common hydration myths...</p>
+                        <a href="#" class="btn">Read More</a>
+                    </article>
+
+                    <article class="card blog-card">
+                        <h3>Heart Rate Zones: Training Smart for Maximum Results</h3>
+                        <div class="blog-meta">
+                            <span>By Coach James Wilson</span>
+                            <span>May 25, 2023</span>
+                            <span>5 min read</span>
+                        </div>
+                        <p class="blog-excerpt">Understanding your heart rate zones can transform your workouts. Learn how to train in different zones for fat burning, endurance, and performance...</p>
+                        <a href="#" class="btn">Read More</a>
+                    </article>
+
+                    <article class="card blog-card">
+                        <h3>BMR vs. TDEE: Understanding the Difference</h3>
+                        <div class="blog-meta">
+                            <span>By Nutritionist Lisa Park</span>
+                            <span>May 18, 2023</span>
+                            <span>6 min read</span>
+                        </div>
+                        <p class="blog-excerpt">Confused about BMR and TDEE? This guide breaks down the difference between these two important metabolic measurements and how to use them...</p>
+                        <a href="#" class="btn">Read More</a>
+                    </article>
+
+                    <article class="card blog-card">
+                        <h3>5 Common Calorie Counting Mistakes and How to Avoid Them</h3>
+                        <div class="blog-meta">
+                            <span>By Dietitian Maria Gonzalez</span>
+                            <span>May 10, 2023</span>
+                            <span>8 min read</span>
+                        </div>
+                        <p class="blog-excerpt">Calorie counting can be effective for weight management, but many people make critical errors. Learn the most common mistakes and how to count calories accurately...</p>
+                        <a href="#" class="btn">Read More</a>
+                    </article>
+
+                    <article class="card blog-card">
+                        <h3>The Role of Metabolism in Weight Loss: Myths and Facts</h3>
+                        <div class="blog-meta">
+                            <span>By Dr. Robert Kim</span>
+                            <span>May 3, 2023</span>
+                            <span>9 min read</span>
+                        </div>
+                        <p class="blog-excerpt">Metabolism plays a crucial role in weight management, but there's much misinformation. We separate fact from fiction and provide evidence-based strategies...</p>
+                        <a href="#" class="btn">Read More</a>
+                    </article>
                 </div>
-                
-                <div class="sidebar-widget">
-                    <h3>Categories</h3>
-                    <ul>
-                        <li><a href="#">Weight Management</a></li>
-                        <li><a href="#">Nutrition</a></li>
-                        <li><a href="#">Exercise Science</a></li>
-                        <li><a href="#">Calculator Guides</a></li>
-                        <li><a href="#">Health Tips</a></li>
-                    </ul>
+
+                <!-- Load More Button -->
+                <div style="text-align: center; margin-top: 40px;">
+                    <button class="btn btn-accent" id="load-more">Load More Articles</button>
                 </div>
             </div>
         </div>
@@ -138,31 +132,38 @@
     <footer>
         <div class="container">
             <div class="footer-content">
-                <div class="footer-section">
-                    <h3>Fitness Calculator Hub</h3>
-                    <p>Your all-in-one solution for fitness calculations and health tracking.</p>
+                <div class="footer-column">
+                    <h3>Fitness-Calc-Hub</h3>
+                    <p>Your ultimate destination for accurate fitness calculations and health information.</p>
                 </div>
-                <div class="footer-section">
-                    <h3>Quick Links</h3>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="tools/index.html">Tools</a></li>
-                        <li><a href="blog.html">Blog</a></li>
-                        <li><a href="about.html">About</a></li>
+                <div class="footer-column">
+                    <h3>Tools</h3>
+                    <ul class="footer-links">
+                        <li><a href="tools/bmi.html">BMI Calculator</a></li>
+                        <li><a href="tools/bmr.html">BMR Calculator</a></li>
+                        <li><a href="tools/tdee.html">TDEE Calculator</a></li>
+                        <li><a href="tools/heart-rate.html">Heart Rate Calculator</a></li>
                     </ul>
                 </div>
-                <div class="footer-section">
+                <div class="footer-column">
+                    <h3>Resources</h3>
+                    <ul class="footer-links">
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="legal/contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
                     <h3>Legal</h3>
-                    <ul>
+                    <ul class="footer-links">
                         <li><a href="legal/privacy-policy.html">Privacy Policy</a></li>
                         <li><a href="legal/terms.html">Terms of Service</a></li>
                         <li><a href="legal/disclaimer.html">Disclaimer</a></li>
-                        <li><a href="legal/contact.html">Contact</a></li>
                     </ul>
                 </div>
             </div>
             <div class="copyright">
-                <p>&copy; 2023 Fitness Calculator Hub. All rights reserved.</p>
+                <p>&copy; 2023 Fitness-Calc-Hub. All rights reserved.</p>
             </div>
         </div>
     </footer>
