@@ -1,285 +1,327 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fitness-Calc-Hub - Your Ultimate Fitness Calculator</title>
-    <meta name="description" content="Free fitness calculators for BMI, BMR, TDEE, calorie needs, heart rate zones, and water intake. Track your fitness journey with accurate calculations.">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
-</head>
-<body>
-    <!-- Header -->
-    <!-- Header -->
-<header class="header">
-    <div class="container">
-        <div class="logo">
-            <a href="index.html">
-                <img src="images/logo.png" alt="Fitness-Calc-Hub Logo">
-                <!-- Remove the text span to avoid duplication -->
-            </a>
-        </div>
-        <nav class="nav">
-    <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="tools/index.html">Tools</a></li> <!-- Changed from tools/bmi.html -->
-        <li><a href="blog.html">Blog</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="contact.html">Contact</a></li>
-    </ul>
-</nav>
-        <div class="mobile-menu-btn">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-    </div>
-</header>
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f8f9fa;
+}
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <h1>Your Ultimate Fitness Calculator Hub</h1>
-                <p>Calculate BMI, BMR, TDEE, calorie needs, heart rate zones, and water intake with our accurate and easy-to-use fitness calculators.</p>
-               <div class="hero-btns">
-    <a href="tools/index.html" class="btn btn-primary">Get Started</a>
-    <a href="about.html" class="btn btn-secondary">Learn More</a>
-</div>
-            </div>
-            <div class="hero-image">
-                <img src="https://via.placeholder.com/600x400/4CAF50/FFFFFF?text=Fitness+Calculator" alt="Fitness Calculator">
-            </div>
-        </div>
-    </section>
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
 
-    <!-- AdSense Banner (Top) -->
-    <section class="adsense-banner">
-        <div class="container">
-            <!-- AdSense Code Here -->
-            <div class="ad-placeholder">
-                <p>AdSense Banner (728x90)</p>
-            </div>
-        </div>
-    </section>
+/* Header Styles */
+header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 1rem 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
 
-    <!-- Tools Section -->
-    <section class="tools-section">
-        <div class="container">
-            <h2>Our Fitness Calculators</h2>
-            <p class="section-subtitle">Accurate calculations to help you achieve your fitness goals</p>
-            
-            <div class="tools-grid">
-                <div class="tool-card">
-                    <div class="tool-icon">
-                        <img src="https://via.placeholder.com/80/4CAF50/FFFFFF?text=BMI" alt="BMI Calculator">
-                    </div>
-                    <h3>BMI Calculator</h3>
-                    <p>Calculate your Body Mass Index to understand if you're at a healthy weight.</p>
-                    <a href="tools/bmi.html" class="btn btn-outline">Calculate BMI</a>
-                </div>
-                
-                <div class="tool-card">
-                    <div class="tool-icon">
-                        <img src="https://via.placeholder.com/80/2196F3/FFFFFF?text=BMR" alt="BMR Calculator">
-                    </div>
-                    <h3>BMR Calculator</h3>
-                    <p>Determine your Basal Metabolic Rate - the calories your body needs at rest.</p>
-                    <a href="tools/bmr.html" class="btn btn-outline">Calculate BMR</a>
-                </div>
-                
-                <div class="tool-card">
-                    <div class="tool-icon">
-                        <img src="https://via.placeholder.com/80/FF9800/FFFFFF?text=TDEE" alt="TDEE Calculator">
-                    </div>
-                    <h3>TDEE Calculator</h3>
-                    <p>Calculate your Total Daily Energy Expenditure based on your activity level.</p>
-                    <a href="tools/tdee.html" class="btn btn-outline">Calculate TDEE</a>
-                </div>
-                
-                <div class="tool-card">
-                    <div class="tool-icon">
-                        <img src="https://via.placeholder.com/80/E91E63/FFFFFF?text=Calorie" alt="Calorie Calculator">
-                    </div>
-                    <h3>Calorie Calculator</h3>
-                    <p>Determine your daily calorie needs for weight loss, maintenance, or gain.</p>
-                    <a href="tools/calorie.html" class="btn btn-outline">Calculate Calories</a>
-                </div>
-                
-                <div class="tool-card">
-                    <div class="tool-icon">
-                        <img src="https://via.placeholder.com/80/9C27B0/FFFFFF?text=Heart" alt="Heart Rate Calculator">
-                    </div>
-                    <h3>Heart Rate Calculator</h3>
-                    <p>Find your target heart rate zones for optimal cardiovascular exercise.</p>
-                    <a href="tools/heart-rate.html" class="btn btn-outline">Calculate Heart Rate</a>
-                </div>
-                
-                <div class="tool-card">
-                    <div class="tool-icon">
-                        <img src="https://via.placeholder.com/80/00BCD4/FFFFFF?text=Water" alt="Water Intake Calculator">
-                    </div>
-                    <h3>Water Intake Calculator</h3>
-                    <p>Calculate how much water you should drink daily for optimal hydration.</p>
-                    <a href="tools/water.html" class="btn btn-outline">Calculate Water Intake</a>
-                </div>
-            </div>
-        </div>
-    </section>
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
-    <!-- Blog Preview Section -->
-    <section class="blog-preview">
-        <div class="container">
-            <h2>Latest Fitness Articles</h2>
-            <p class="section-subtitle">Stay informed with our latest fitness tips and guides</p>
-            
-            <div class="blog-grid">
-                <article class="blog-card">
-                    <div class="blog-image">
-                        <img src="https://via.placeholder.com/400x250/4CAF50/FFFFFF?text=Fitness+Tips" alt="Fitness Tips">
-                    </div>
-                    <div class="blog-content">
-                        <h3>10 Tips for Effective Weight Loss</h3>
-                        <p>Discover science-backed strategies to help you lose weight effectively and maintain your results long-term.</p>
-                        <a href="blog.html#article1" class="read-more">Read More</a>
-                    </div>
-                </article>
-                
-                <article class="blog-card">
-                    <div class="blog-image">
-                        <img src="https://via.placeholder.com/400x250/2196F3/FFFFFF?text=Nutrition" alt="Nutrition Guide">
-                    </div>
-                    <div class="blog-content">
-                        <h3>The Ultimate Nutrition Guide for Athletes</h3>
-                        <p>Learn how to fuel your body properly for optimal performance and recovery.</p>
-                        <a href="blog.html#article2" class="read-more">Read More</a>
-                    </div>
-                </article>
-                
-                <article class="blog-card">
-                    <div class="blog-image">
-                        <img src="https://via.placeholder.com/400x250/FF9800/FFFFFF?text=Workout" alt="Workout Routine">
-                    </div>
-                    <div class="blog-content">
-                        <h3>Building the Perfect Workout Routine</h3>
-                        <p>Create a workout plan that fits your goals, schedule, and fitness level.</p>
-                        <a href="blog.html#article3" class="read-more">Read More</a>
-                    </div>
-                </article>
-            </div>
-            
-            <div class="text-center">
-                <a href="blog.html" class="btn btn-primary">View All Articles</a>
-            </div>
-        </div>
-    </section>
+.logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+}
 
-    <!-- AdSense Banner (Middle) -->
-    <section class="adsense-banner">
-        <div class="container">
-            <!-- AdSense Code Here -->
-            <div class="ad-placeholder">
-                <p>AdSense Banner (728x90)</p>
-            </div>
-        </div>
-    </section>
+.logo a {
+    color: white;
+    text-decoration: none;
+}
 
-    <!-- Features Section -->
-    <section class="features-section">
-        <div class="container">
-            <h2>Why Choose Fitness-Calc-Hub?</h2>
-            
-            <div class="features-grid">
-                <div class="feature">
-                    <div class="feature-icon">✓</div>
-                    <h3>Accurate Calculations</h3>
-                    <p>Our calculators use scientifically validated formulas for precise results.</p>
-                </div>
-                
-                <div class="feature">
-                    <div class="feature-icon">✓</div>
-                    <h3>Easy to Use</h3>
-                    <p>Simple interfaces that make complex calculations accessible to everyone.</p>
-                </div>
-                
-                <div class="feature">
-                    <div class="feature-icon">✓</div>
-                    <h3>Completely Free</h3>
-                    <p>All our tools are available at no cost to help you on your fitness journey.</p>
-                </div>
-                
-                <div class="feature">
-                    <div class="feature-icon">✓</div>
-                    <h3>Mobile Friendly</h3>
-                    <p>Access our calculators on any device, anywhere, anytime.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+nav ul {
+    display: flex;
+    list-style: none;
+}
 
-    <!-- CTA Section -->
-    <section class="cta-section">
-        <div class="container">
-            <h2>Start Your Fitness Journey Today</h2>
-            <p>Take the first step towards a healthier you with our comprehensive fitness calculators.</p>
-           <a href="tools/index.html" class="btn btn-primary">Get Started Now</a>
-        </div>
-    </section>
+nav ul li {
+    margin-left: 1.5rem;
+}
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <div class="logo">
-                        <a href="index.html">
-                            <img src="images/logo.png" alt="Fitness-Calc-Hub Logo">
-                            <span>Fitness-Calc-Hub</span>
-                        </a>
-                    </div>
-                    <p>Your ultimate destination for accurate fitness calculations and health information.</p>
-                </div>
-                
-                <div class="footer-section">
-                    <h3>Tools</h3>
-                    <ul>
-                        <li><a href="tools/bmi.html">BMI Calculator</a></li>
-                        <li><a href="tools/bmr.html">BMR Calculator</a></li>
-                        <li><a href="tools/tdee.html">TDEE Calculator</a></li>
-                        <li><a href="tools/calorie.html">Calorie Calculator</a></li>
-                        <li><a href="tools/heart-rate.html">Heart Rate Calculator</a></li>
-                        <li><a href="tools/water.html">Water Intake Calculator</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-section">
-                    <h3>Company</h3>
-                    <ul>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="blog.html">Blog</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-section">
-                    <h3>Legal</h3>
-                    <ul>
-                        <li><a href="legal/terms.html">Terms of Service</a></li>
-                        <li><a href="legal/privacy-policy.html">Privacy Policy</a></li>
-                        <li><a href="legal/disclaimer.html">Disclaimer</a></li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="footer-bottom">
-                <p>&copy; 2025 Fitness-Calc-Hub. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+    padding: 0.5rem 0;
+}
 
-    <script src="js/main.js"></script>
-</body>
-</html>
+nav ul li a:hover {
+    color: #ffd700;
+}
+
+.mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(rgba(102, 126, 234, 0.8), rgba(118, 75, 162, 0.8)), url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 5rem 0;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 0 auto 2rem;
+}
+
+.btn {
+    display: inline-block;
+    background: #ff6b6b;
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: #ff5252;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Tools Grid */
+.tools-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 4rem 0;
+}
+
+.tool-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.tool-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.tool-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.tool-card-content {
+    padding: 1.5rem;
+}
+
+.tool-card h3 {
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.tool-card p {
+    color: #666;
+    margin-bottom: 1rem;
+}
+
+/* Calculator Form Styles */
+.calculator-container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.calculator-form {
+    margin-bottom: 2rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.radio-group {
+    display: flex;
+    gap: 1rem;
+}
+
+.radio-option {
+    display: flex;
+    align-items: center;
+}
+
+.radio-option input {
+    width: auto;
+    margin-right: 0.5rem;
+}
+
+/* Results Section */
+.results {
+    padding: 1.5rem;
+    background: #f8f9fa;
+    border-radius: 5px;
+    margin-top: 2rem;
+    display: none;
+}
+
+.results h3 {
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.result-value {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #667eea;
+    margin-bottom: 1rem;
+}
+
+.result-description {
+    color: #666;
+}
+
+/* Footer */
+footer {
+    background: #333;
+    color: white;
+    padding: 3rem 0 1rem;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.footer-section h3 {
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section ul li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-section a {
+    color: #ddd;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-section a:hover {
+    color: #ff6b6b;
+}
+
+.copyright {
+    text-align: center;
+    padding-top: 1rem;
+    border-top: 1px solid #444;
+    color: #aaa;
+    font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    nav ul {
+        margin-top: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    nav ul li {
+        margin: 0.5rem;
+    }
+    
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+    
+    .hero p {
+        font-size: 1rem;
+    }
+    
+    .calculator-container {
+        padding: 1rem;
+    }
+    
+    .mobile-menu-btn {
+        display: block;
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+    }
+    
+    .nav-menu {
+        display: none;
+        width: 100%;
+    }
+    
+    .nav-menu.active {
+        display: block;
+    }
+    
+    .nav-menu ul {
+        flex-direction: column;
+    }
+    
+    .nav-menu ul li {
+        margin: 0.5rem 0;
+    }
+}
