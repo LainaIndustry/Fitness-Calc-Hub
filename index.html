@@ -3,100 +3,136 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fitness Calculator Hub - Your All-in-One Fitness Calculator</title>
-    <meta name="description" content="Calculate BMI, BMR, TDEE, calorie needs, water intake, and heart rate zones with our free fitness calculators.">
+    <title>Fitness-Calc-Hub - Your Ultimate Fitness Calculator</title>
+    <meta name="description" content="Calculate BMI, BMR, TDEE, calorie needs, heart rate zones, and water intake with our free fitness calculators.">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <!-- Header -->
     <header>
         <div class="container header-container">
-            <div class="logo">
-                <a href="index.html">Fitness Calculator Hub</a>
-            </div>
-            <button class="mobile-menu-btn">☰</button>
-            <nav class="nav-menu">
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="tools/index.html">Tools</a></li>
-                    <li><a href="blog.html">Blog</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="legal/contact.html">Contact</a></li>
-                </ul>
-            </nav>
+            <a href="index.html" class="logo">Fitness<span>Calc</span>Hub</a>
+            <div class="mobile-toggle">☰</div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="tools/index.html">Tools</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="legal/contact.html">Contact</a></li>
+            </ul>
         </div>
     </header>
 
     <!-- Hero Section -->
     <section class="hero">
         <div class="container">
-            <h1>Your All-in-One Fitness Calculator</h1>
-            <p>Calculate BMI, BMR, TDEE, calorie needs, water intake, and heart rate zones with our accurate and easy-to-use fitness calculators.</p>
-            <a href="tools/index.html" class="btn">Explore Tools</a>
+            <h1>Your Ultimate Fitness Calculator Hub</h1>
+            <p>Calculate BMI, BMR, TDEE, calorie needs, heart rate zones, and water intake with our free, accurate fitness calculators.</p>
+            <a href="tools/index.html" class="btn btn-accent">Explore All Tools</a>
         </div>
     </section>
 
-    <!-- Tools Section -->
-    <section class="container">
-        <h2 style="text-align: center; margin: 3rem 0 2rem;">Our Fitness Calculators</h2>
-        <div class="tools-grid">
-            <!-- BMI Calculator Card -->
-            <div class="tool-card">
-                <img src="https://images.unsplash.com/photo-1536922246289-88c42f957773?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="BMI Calculator">
-                <div class="tool-card-content">
+    <!-- Featured Tools Section -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Featured Fitness Calculators</h2>
+            <div class="tools-grid">
+                <div class="card tool-card">
+                    <div class="tool-icon">⚖️</div>
                     <h3>BMI Calculator</h3>
-                    <p>Calculate your Body Mass Index to understand if your weight is healthy for your height.</p>
+                    <p>Calculate your Body Mass Index to assess if your weight is healthy.</p>
                     <a href="tools/bmi.html" class="btn">Calculate BMI</a>
                 </div>
-            </div>
-
-            <!-- BMR Calculator Card -->
-            <div class="tool-card">
-                <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="BMR Calculator">
-                <div class="tool-card-content">
+                <div class="card tool-card">
+                    <div class="tool-icon">🔥</div>
                     <h3>BMR Calculator</h3>
-                    <p>Find out your Basal Metabolic Rate - the calories your body needs at complete rest.</p>
+                    <p>Determine your Basal Metabolic Rate - calories burned at rest.</p>
                     <a href="tools/bmr.html" class="btn">Calculate BMR</a>
                 </div>
-            </div>
-
-            <!-- TDEE Calculator Card -->
-            <div class="tool-card">
-                <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="TDEE Calculator">
-                <div class="tool-card-content">
+                <div class="card tool-card">
+                    <div class="tool-icon">⚡</div>
                     <h3>TDEE Calculator</h3>
-                    <p>Calculate your Total Daily Energy Expenditure based on your activity level.</p>
+                    <p>Find your Total Daily Energy Expenditure based on activity level.</p>
                     <a href="tools/tdee.html" class="btn">Calculate TDEE</a>
                 </div>
-            </div>
-
-            <!-- Calorie Calculator Card -->
-            <div class="tool-card">
-                <img src="https://images.unsplash.com/photo-1490818387583-1baba5e638af?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Calorie Calculator">
-                <div class="tool-card-content">
-                    <h3>Calorie Calculator</h3>
-                    <p>Determine your daily calorie needs based on your fitness goals.</p>
-                    <a href="tools/calorie.html" class="btn">Calculate Calories</a>
+                <div class="card tool-card">
+                    <div class="tool-icon">💓</div>
+                    <h3>Heart Rate Calculator</h3>
+                    <p>Determine your target heart rate zones for optimal workouts.</p>
+                    <a href="tools/heart-rate.html" class="btn">Calculate Heart Rate</a>
                 </div>
-            </div>
-
-            <!-- Water Intake Calculator Card -->
-            <div class="tool-card">
-                <img src="https://images.unsplash.com/photo-1548839149-8c5a1ad0b4f7?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Water Intake Calculator">
-                <div class="tool-card-content">
+                <div class="card tool-card">
+                    <div class="tool-icon">💧</div>
                     <h3>Water Intake Calculator</h3>
                     <p>Find out how much water you should drink daily for optimal health.</p>
                     <a href="tools/water.html" class="btn">Calculate Water Needs</a>
                 </div>
+                <div class="card tool-card">
+                    <div class="tool-icon">🍽️</div>
+                    <h3>Calorie Calculator</h3>
+                    <p>Calculate your daily calorie needs for weight loss or maintenance.</p>
+                    <a href="tools/calorie.html" class="btn">Calculate Calories</a>
+                </div>
             </div>
+        </div>
+    </section>
 
-            <!-- Heart Rate Calculator Card -->
-            <div class="tool-card">
-                <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Heart Rate Calculator">
-                <div class="tool-card-content">
-                    <h3>Heart Rate Calculator</h3>
-                    <p>Calculate your heart rate zones for effective training.</p>
-                    <a href="tools/heart-rate.html" class="btn">Calculate Heart Rate</a>
+    <!-- BMI Calculator Preview -->
+    <section class="section" style="background-color: #f5f7fa;">
+        <div class="container">
+            <h2 class="section-title">Try Our BMI Calculator</h2>
+            <div class="calculator card">
+                <form id="bmi-form">
+                    <div class="form-group">
+                        <label for="height">Height (cm)</label>
+                        <input type="number" id="height" class="form-control" placeholder="Enter your height" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="weight">Weight (kg)</label>
+                        <input type="number" id="weight" class="form-control" placeholder="Enter your weight" required>
+                    </div>
+                    <button type="submit" class="btn btn-accent" style="width: 100%;">Calculate BMI</button>
+                </form>
+                <div class="result" id="bmi-result">
+                    <h3>Your BMI Result</h3>
+                    <div class="result-value" id="bmi-value">0</div>
+                    <div class="result-interpretation" id="bmi-interpretation"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Preview Section -->
+    <section class="section blog-preview">
+        <div class="container">
+            <h2 class="section-title">Latest Fitness Articles</h2>
+            <div class="blog-grid">
+                <div class="card blog-card">
+                    <h3>Understanding BMI and Its Limitations</h3>
+                    <div class="blog-meta">
+                        <span>By Admin</span>
+                        <span>May 15, 2023</span>
+                    </div>
+                    <p class="blog-excerpt">Learn what BMI measures, how to interpret your results, and why it's not the complete picture of health...</p>
+                    <a href="blog.html" class="btn">Read More</a>
+                </div>
+                <div class="card blog-card">
+                    <h3>How to Calculate Your TDEE for Weight Management</h3>
+                    <div class="blog-meta">
+                        <span>By Admin</span>
+                        <span>April 28, 2023</span>
+                    </div>
+                    <p class="blog-excerpt">Your Total Daily Energy Expenditure (TDEE) is crucial for weight management. Learn how to calculate it accurately...</p>
+                    <a href="blog.html" class="btn">Read More</a>
+                </div>
+                <div class="card blog-card">
+                    <h3>The Importance of Hydration for Fitness</h3>
+                    <div class="blog-meta">
+                        <span>By Admin</span>
+                        <span>April 10, 2023</span>
+                    </div>
+                    <p class="blog-excerpt">Proper hydration is essential for optimal performance and recovery. Discover how much water you really need...</p>
+                    <a href="blog.html" class="btn">Read More</a>
                 </div>
             </div>
         </div>
@@ -106,31 +142,38 @@
     <footer>
         <div class="container">
             <div class="footer-content">
-                <div class="footer-section">
-                    <h3>Fitness Calculator Hub</h3>
-                    <p>Your all-in-one solution for fitness calculations and health tracking.</p>
+                <div class="footer-column">
+                    <h3>Fitness-Calc-Hub</h3>
+                    <p>Your ultimate destination for accurate fitness calculations and health information.</p>
                 </div>
-                <div class="footer-section">
-                    <h3>Quick Links</h3>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="tools/index.html">Tools</a></li>
-                        <li><a href="blog.html">Blog</a></li>
-                        <li><a href="about.html">About</a></li>
+                <div class="footer-column">
+                    <h3>Tools</h3>
+                    <ul class="footer-links">
+                        <li><a href="tools/bmi.html">BMI Calculator</a></li>
+                        <li><a href="tools/bmr.html">BMR Calculator</a></li>
+                        <li><a href="tools/tdee.html">TDEE Calculator</a></li>
+                        <li><a href="tools/heart-rate.html">Heart Rate Calculator</a></li>
                     </ul>
                 </div>
-                <div class="footer-section">
+                <div class="footer-column">
+                    <h3>Resources</h3>
+                    <ul class="footer-links">
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="legal/contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
                     <h3>Legal</h3>
-                    <ul>
+                    <ul class="footer-links">
                         <li><a href="legal/privacy-policy.html">Privacy Policy</a></li>
                         <li><a href="legal/terms.html">Terms of Service</a></li>
                         <li><a href="legal/disclaimer.html">Disclaimer</a></li>
-                        <li><a href="legal/contact.html">Contact</a></li>
                     </ul>
                 </div>
             </div>
             <div class="copyright">
-                <p>&copy; 2023 Fitness Calculator Hub. All rights reserved.</p>
+                <p>&copy; 2023 Fitness-Calc-Hub. All rights reserved.</p>
             </div>
         </div>
     </footer>
