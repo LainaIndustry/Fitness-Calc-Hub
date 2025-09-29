@@ -1,76 +1,58 @@
-// Main JavaScript for Fitness-Calc-Hub
+// Main JavaScript for Fitness Calculator Hub
 
-// Mobile Menu Toggle
+// Mobile menu toggle
 document.addEventListener('DOMContentLoaded', function() {
     const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-    const nav = document.querySelector('.nav');
+    const navMenu = document.querySelector('.nav-menu');
     
     if (mobileMenuBtn) {
         mobileMenuBtn.addEventListener('click', function() {
-            this.classList.toggle('active');
-            nav.classList.toggle('active');
+            navMenu.classList.toggle('active');
         });
     }
     
-    // Close mobile menu when clicking on a link
-    const navLinks = document.querySelectorAll('.nav a');
-    navLinks.forEach(link => {
-        link.addEventListener('click', function() {
-            mobileMenuBtn.classList.remove('active');
-            nav.classList.remove('active');
-        });
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', function(event) {
+        if (!event.target.closest('.nav-menu') && !event.target.closest('.mobile-menu-btn')) {
+            navMenu.classList.remove('active');
+        }
     });
     
-    // Initialize all calculators if on a calculator page
-    if (typeof initBMICalculator === 'function') {
-        initBMICalculator();
-    }
-    
-    if (typeof initBMRCalculator === 'function') {
-        initBMRCalculator();
-    }
-    
-    if (typeof initCalorieCalculator === 'function') {
-        initCalorieCalculator();
-    }
-    
-    if (typeof initHeartRateCalculator === 'function') {
-        initHeartRateCalculator();
-    }
-    
-    if (typeof initTDEECalculator === 'function') {
-        initTDEECalculator();
-    }
-    
-    if (typeof initWaterCalculator === 'function') {
-        initWaterCalculator();
-    }
+    // Initialize all calculators
+    initializeCalculators();
 });
 
-// Utility function for number formatting
-function formatNumber(num, decimals = 2) {
-    return parseFloat(num).toFixed(decimals);
+// Initialize all calculators
+function initializeCalculators() {
+    // This function will be extended by individual calculator scripts
+    console.log('Calculators initialized');
 }
 
-// Utility function for input validation
-function validateNumberInput(input, min = 0, max = 1000) {
-    const value = parseFloat(input.value);
-    
+// Utility function to validate numbers
+function validateNumber(input, min = 0, max = 1000) {
+    const value = parseFloat(input);
     if (isNaN(value) || value < min || value > max) {
-        input.classList.add('error');
         return false;
     }
-    
-    input.classList.remove('error');
     return true;
 }
 
-// Add error class styling
-const style = document.createElement('style');
-style.textContent = `
-    .error {
-        border-color: #f44336 !important;
-        box-shadow: 0 0 5px rgba(244, 67, 54, 0.5) !important;
-    }
-`;
-document.head.appendChild(style);
+// Utility function to show results
+function showResults(elementId, result, description) {
+    const resultsElement = document.getElementById(elementId);
+    const resultValue = resultsElement.querySelector('.result-value');
+    const resultDescription = resultsElement.querySelector('.result-description');
+    
+    resultValue.textContent = result;
+    resultDescription.innerHTML = description;
+    resultsElement.style.display = 'block';
+    
+    // Scroll to results
+    resultsElement.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
+
+// Utility function to reset form
+function resetForm(formId, resultsId) {
+    document.getElementById(formId).reset();
+    document.getElementById(resultsId).style.display = 'none';
+}
