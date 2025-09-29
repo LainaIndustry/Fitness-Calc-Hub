@@ -131,18 +131,25 @@
     <script src="../js/main.js"></script>
     <script src="../js/water.js"></script>
     
-    <script>
-        // Update unit labels based on selection
-        document.getElementById('unit').addEventListener('change', function() {
-            const unit = this.value;
-            const weightUnit = document.getElementById('weight-unit');
-            
-            if (unit === 'metric') {
-                weightUnit.textContent = 'kg';
-            } else {
-                weightUnit.textContent = 'lbs';
-            }
-        });
-    </script>
+   <script>
+    // Update unit labels based on selection
+    document.addEventListener('DOMContentLoaded', function() {
+        const unitSelect = document.getElementById('unit');
+        if (unitSelect) {
+            unitSelect.addEventListener('change', function() {
+                const unit = this.value;
+                const weightUnit = document.getElementById('weight-unit');
+                const heightUnit = document.getElementById('height-unit');
+                
+                if (weightUnit) {
+                    weightUnit.textContent = unit === 'metric' ? 'kg' : 'lbs';
+                }
+                if (heightUnit) {
+                    heightUnit.textContent = unit === 'metric' ? 'cm' : 'inches';
+                }
+            });
+        }
+    });
+</script>
 </body>
 </html>
