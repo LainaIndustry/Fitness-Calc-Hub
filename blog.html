@@ -3,313 +3,170 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fitness Blog - Fitness-Calc-Hub</title>
-    <meta name="description" content="Read our latest fitness articles, tips, and guides to help you achieve your health and wellness goals.">
+    <title>Fitness Blog - Fitness Calculator Hub</title>
+    <meta name="description" content="Read our fitness blog for tips, guides, and information about health, nutrition, and using our fitness calculators effectively.">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/blog.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- Header -->
-    <!-- Header -->
-<header class="header">
-    <div class="container">
-        <div class="logo">
-            <a href="index.html">
-                <img src="images/logo.png" alt="Fitness-Calc-Hub Logo">
-                <!-- Remove the text span to avoid duplication -->
-            </a>
-        </div>
-       <nav class="nav">
-    <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="tools/index.html">Tools</a></li> <!-- Changed from tools/bmi.html -->
-        <li><a href="blog.html">Blog</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="contact.html">Contact</a></li>
-    </ul>
-</nav>
-        <div class="mobile-menu-btn">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-    </div>
-</header>
-
-    <!-- Blog Hero -->
-    <section class="blog-hero">
-    <div class="container">
-        <h1>Fitness Blog</h1>
-        <p>Expert tips, guides, and insights to help you on your fitness journey</p>
-    </div>
-</section>
-
-    <!-- AdSense Banner -->
-    <section class="adsense-banner">
-        <div class="container">
-            <div class="ad-placeholder">
-                <p>AdSense Banner (728x90)</p>
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <a href="index.html">Fitness Calculator Hub</a>
             </div>
+            <button class="mobile-menu-btn">☰</button>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="tools/index.html">Tools</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="legal/contact.html">Contact</a></li>
+                </ul>
+            </nav>
         </div>
-    </section>
+    </header>
 
-    <!-- Blog Content -->
-    <section class="blog-container">
-        <div class="blog-filters">
-            <button class="filter-btn active" data-filter="all">All Articles</button>
-            <button class="filter-btn" data-filter="nutrition">Nutrition</button>
-            <button class="filter-btn" data-filter="workouts">Workouts</button>
-            <button class="filter-btn" data-filter="weight-loss">Weight Loss</button>
-            <button class="filter-btn" data-filter="wellness">Wellness</button>
-        </div>
-
-        <div class="blog-articles">
-            <!-- Article 1 -->
-            <article class="blog-article" data-category="weight-loss">
-                <div class="article-image">
-                    <img src="https://via.placeholder.com/400x250/4CAF50/FFFFFF?text=Weight+Loss" alt="10 Tips for Effective Weight Loss">
-                </div>
-                <div class="article-content">
-                    <div class="article-meta">
-                        <span class="article-category">Weight Loss</span>
-                        <span class="article-date">March 15, 2023</span>
+    <!-- Blog Section -->
+    <section class="container blog-container">
+        <div class="blog-layout">
+            <div class="blog-main">
+                <h1>Fitness & Health Blog</h1>
+                
+                <!-- Blog Post 1 -->
+                <article class="blog-post">
+                    <h2>Understanding BMI: What Your Number Really Means</h2>
+                    <div class="post-meta">
+                        <span>Published on December 15, 2023</span> • <span>5 min read</span>
                     </div>
-                    <h2><a href="blog-single.html">10 Science-Backed Tips for Effective Weight Loss</a></h2>
-                    <p>Discover proven strategies that can help you lose weight effectively and maintain your results long-term without extreme diets or unsustainable practices.</p>
-                    <div class="article-footer">
-                        <div class="article-author">
-                            <img src="https://via.placeholder.com/30/4CAF50/FFFFFF?text=J" alt="Author" class="author-avatar">
-                            <span class="author-name">Dr. Jane Smith</span>
-                        </div>
-                        <span class="read-time">8 min read</span>
+                    <p>Body Mass Index (BMI) is one of the most commonly used tools to assess whether a person has a healthy body weight. But what does your BMI number actually tell you, and what are its limitations?</p>
+                    
+                    <p>BMI is calculated by dividing your weight in kilograms by your height in meters squared. While it's a useful screening tool, it doesn't account for factors like muscle mass, bone density, and distribution of fat.</p>
+                    
+                    <h3>BMI Categories:</h3>
+                    <ul>
+                        <li>Underweight: BMI less than 18.5</li>
+                        <li>Normal weight: BMI 18.5 to 24.9</li>
+                        <li>Overweight: BMI 25 to 29.9</li>
+                        <li>Obesity: BMI 30 or greater</li>
+                    </ul>
+                    
+                    <p>Remember that BMI is just one indicator of health. Athletes with high muscle mass may have a high BMI but low body fat, while older adults may have a normal BMI but high body fat percentage.</p>
+                    
+                    <a href="#" class="read-more">Read full article →</a>
+                </article>
+                
+                <!-- Blog Post 2 -->
+                <article class="blog-post">
+                    <h2>How to Use Your BMR and TDEE for Weight Management</h2>
+                    <div class="post-meta">
+                        <span>Published on December 10, 2023</span> • <span>7 min read</span>
                     </div>
-                </div>
-            </article>
-
-            <!-- Article 2 -->
-            <article class="blog-article" data-category="nutrition">
-                <div class="article-image">
-                    <img src="https://via.placeholder.com/400x250/2196F3/FFFFFF?text=Nutrition" alt="Nutrition Guide for Athletes">
-                </div>
-                <div class="article-content">
-                    <div class="article-meta">
-                        <span class="article-category">Nutrition</span>
-                        <span class="article-date">March 10, 2023</span>
+                    <p>Understanding your Basal Metabolic Rate (BMR) and Total Daily Energy Expenditure (TDEE) is crucial for effective weight management. These numbers form the foundation of any successful nutrition plan.</p>
+                    
+                    <p>Your BMR represents the calories your body needs at complete rest, while your TDEE accounts for your activity level. The difference between these numbers and your calorie intake determines whether you lose, maintain, or gain weight.</p>
+                    
+                    <h3>Practical Applications:</h3>
+                    <ul>
+                        <li>Weight loss: Consume 300-500 calories less than your TDEE</li>
+                        <li>Weight maintenance: Match your calorie intake to your TDEE</li>
+                        <li>Weight gain: Consume 300-500 calories more than your TDEE</li>
+                    </ul>
+                    
+                    <p>Use our BMR and TDEE calculators to get your personalized numbers and create a nutrition plan that aligns with your goals.</p>
+                    
+                    <a href="#" class="read-more">Read full article →</a>
+                </article>
+                
+                <!-- Blog Post 3 -->
+                <article class="blog-post">
+                    <h2>The Importance of Hydration: Beyond the 8-Glass Rule</h2>
+                    <div class="post-meta">
+                        <span>Published on December 5, 2023</span> • <span>4 min read</span>
                     </div>
-                    <h2><a href="blog-single.html">The Ultimate Nutrition Guide for Athletes</a></h2>
-                    <p>Learn how to fuel your body properly for optimal performance, recovery, and results whether you're a weekend warrior or competitive athlete.</p>
-                    <div class="article-footer">
-                        <div class="article-author">
-                            <img src="https://via.placeholder.com/30/2196F3/FFFFFF?text=M" alt="Author" class="author-avatar">
-                            <span class="author-name">Mike Johnson</span>
-                        </div>
-                        <span class="read-time">12 min read</span>
-                    </div>
-                </div>
-            </article>
-
-            <!-- Article 3 -->
-            <article class="blog-article" data-category="workouts">
-                <div class="article-image">
-                    <img src="https://via.placeholder.com/400x250/FF9800/FFFFFF?text=Workout" alt="Perfect Workout Routine">
-                </div>
-                <div class="article-content">
-                    <div class="article-meta">
-                        <span class="article-category">Workouts</span>
-                        <span class="article-date">March 5, 2023</span>
-                    </div>
-                    <h2><a href="blog-single.html">Building the Perfect Workout Routine for Your Goals</a></h2>
-                    <p>Create a customized workout plan that fits your specific goals, schedule, and fitness level for maximum efficiency and results.</p>
-                    <div class="article-footer">
-                        <div class="article-author">
-                            <img src="https://via.placeholder.com/30/FF9800/FFFFFF?text=S" alt="Author" class="author-avatar">
-                            <span class="author-name">Sarah Chen</span>
-                        </div>
-                        <span class="read-time">10 min read</span>
-                    </div>
-                </div>
-            </article>
-
-            <!-- Article 4 -->
-            <article class="blog-article" data-category="wellness">
-                <div class="article-image">
-                    <img src="https://via.placeholder.com/400x250/9C27B0/FFFFFF?text=Wellness" alt="Importance of Sleep">
-                </div>
-                <div class="article-content">
-                    <div class="article-meta">
-                        <span class="article-category">Wellness</span>
-                        <span class="article-date">February 28, 2023</span>
-                    </div>
-                    <h2><a href="blog-single.html">The Critical Role of Sleep in Fitness and Recovery</a></h2>
-                    <p>Understand why quality sleep is just as important as your workouts and nutrition for achieving your fitness goals.</p>
-                    <div class="article-footer">
-                        <div class="article-author">
-                            <img src="https://via.placeholder.com/30/9C27B0/FFFFFF?text=R" alt="Author" class="author-avatar">
-                            <span class="author-name">Dr. Robert Kim</span>
-                        </div>
-                        <span class="read-time">6 min read</span>
-                    </div>
-                </div>
-            </article>
-
-            <!-- Article 5 -->
-            <article class="blog-article" data-category="nutrition">
-                <div class="article-image">
-                    <img src="https://via.placeholder.com/400x250/4CAF50/FFFFFF?text=Hydration" alt="Hydration Guide">
-                </div>
-                <div class="article-content">
-                    <div class="article-meta">
-                        <span class="article-category">Nutrition</span>
-                        <span class="article-date">February 22, 2023</span>
-                    </div>
-                    <h2><a href="blog-single.html">Hydration 101: How Much Water Do You Really Need?</a></h2>
-                    <p>Learn about the importance of proper hydration and how to calculate your individual water needs based on your activity level and environment.</p>
-                    <div class="article-footer">
-                        <div class="article-author">
-                            <img src="https://via.placeholder.com/30/4CAF50/FFFFFF?text=L" alt="Author" class="author-avatar">
-                            <span class="author-name">Lisa Wang</span>
-                        </div>
-                        <span class="read-time">7 min read</span>
-                    </div>
-                </div>
-            </article>
-
-            <!-- Article 6 -->
-            <article class="blog-article" data-category="workouts">
-                <div class="article-image">
-                    <img src="https://via.placeholder.com/400x250/2196F3/FFFFFF?text=Cardio" alt="Cardio vs Strength">
-                </div>
-                <div class="article-content">
-                    <div class="article-meta">
-                        <span class="article-category">Workouts</span>
-                        <span class="article-date">February 18, 2023</span>
-                    </div>
-                    <h2><a href="blog-single.html">Cardio vs Strength Training: Finding the Right Balance</a></h2>
-                    <p>Discover the benefits of both cardio and strength training and learn how to create the perfect balance for your fitness goals.</p>
-                    <div class="article-footer">
-                        <div class="article-author">
-                            <img src="https://via.placeholder.com/30/2196F3/FFFFFF?text=T" alt="Author" class="author-avatar">
-                            <span class="author-name">Tom Wilson</span>
-                        </div>
-                        <span class="read-time">9 min read</span>
-                    </div>
-                </div>
-            </article>
-        </div>
-
-        <!-- Pagination -->
-        <div class="text-center" style="margin-top: 50px;">
-            <div class="pagination">
-                <a href="#" class="btn btn-outline">← Previous</a>
-                <a href="#" class="btn btn-primary">1</a>
-                <a href="#" class="btn btn-outline">2</a>
-                <a href="#" class="btn btn-outline">3</a>
-                <a href="#" class="btn btn-outline">Next →</a>
+                    <p>We've all heard the advice to drink eight glasses of water per day, but hydration needs are highly individual. Factors like body weight, activity level, climate, and overall health all influence how much water you need.</p>
+                    
+                    <p>Proper hydration affects nearly every system in your body, from cognitive function to joint health and temperature regulation. Even mild dehydration can impact your energy levels and physical performance.</p>
+                    
+                    <h3>Signs of Adequate Hydration:</h3>
+                    <ul>
+                        <li>Light yellow urine</li>
+                        <li>Regular urination</li>
+                        <li>Moist mouth and skin</li>
+                        <li>Consistent energy levels</li>
+                    </ul>
+                    
+                    <p>Use our water intake calculator to get a personalized recommendation based on your weight and activity level, but remember to listen to your body's thirst signals as well.</p>
+                    
+                    <a href="#" class="read-more">Read full article →</a>
+                </article>
             </div>
-        </div>
-    </section>
-
-    <!-- Newsletter Section -->
-    <section class="newsletter-section">
-        <div class="container">
-            <h2>Stay Updated with Fitness Tips</h2>
-            <p>Subscribe to our newsletter and get the latest fitness articles delivered to your inbox.</p>
-            <form class="newsletter-form">
-                <input type="email" class="newsletter-input" placeholder="Enter your email address" required>
-                <button type="submit" class="btn btn-primary">Subscribe</button>
-            </form>
-        </div>
-    </section>
-
-    <!-- AdSense Banner -->
-    <section class="adsense-banner">
-        <div class="container">
-            <div class="ad-placeholder">
-                <p>AdSense Banner (728x90)</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <div class="logo">
-                        <a href="index.html">
-                            <img src="images/logo.png" alt="Fitness-Calc-Hub Logo">
-                            <span>Fitness-Calc-Hub</span>
-                        </a>
-                    </div>
-                    <p>Your ultimate destination for accurate fitness calculations and health information.</p>
+            
+            <div class="blog-sidebar">
+                <div class="sidebar-widget">
+                    <h3>About This Blog</h3>
+                    <p>Welcome to the Fitness Calculator Hub blog! Here we share evidence-based information about fitness, nutrition, and how to use our calculators effectively.</p>
                 </div>
                 
-                <div class="footer-section">
-                    <h3>Tools</h3>
+                <div class="sidebar-widget">
+                    <h3>Popular Calculators</h3>
                     <ul>
                         <li><a href="tools/bmi.html">BMI Calculator</a></li>
                         <li><a href="tools/bmr.html">BMR Calculator</a></li>
                         <li><a href="tools/tdee.html">TDEE Calculator</a></li>
                         <li><a href="tools/calorie.html">Calorie Calculator</a></li>
-                        <li><a href="tools/heart-rate.html">Heart Rate Calculator</a></li>
                         <li><a href="tools/water.html">Water Intake Calculator</a></li>
                     </ul>
                 </div>
                 
-                <div class="footer-section">
-                    <h3>Company</h3>
+                <div class="sidebar-widget">
+                    <h3>Categories</h3>
                     <ul>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="blog.html">Blog</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-section">
-                    <h3>Legal</h3>
-                    <ul>
-                        <li><a href="legal/terms.html">Terms of Service</a></li>
-                        <li><a href="legal/privacy-policy.html">Privacy Policy</a></li>
-                        <li><a href="legal/disclaimer.html">Disclaimer</a></li>
+                        <li><a href="#">Weight Management</a></li>
+                        <li><a href="#">Nutrition</a></li>
+                        <li><a href="#">Exercise Science</a></li>
+                        <li><a href="#">Calculator Guides</a></li>
+                        <li><a href="#">Health Tips</a></li>
                     </ul>
                 </div>
             </div>
-            
-            <div class="footer-bottom">
-                <p>&copy; 2023 Fitness-Calc-Hub. All rights reserved.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Fitness Calculator Hub</h3>
+                    <p>Your all-in-one solution for fitness calculations and health tracking.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="tools/index.html">Tools</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="about.html">About</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Legal</h3>
+                    <ul>
+                        <li><a href="legal/privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="legal/terms.html">Terms of Service</a></li>
+                        <li><a href="legal/disclaimer.html">Disclaimer</a></li>
+                        <li><a href="legal/contact.html">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Fitness Calculator Hub. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
     <script src="js/main.js"></script>
-    <script>
-        // Blog filter functionality
-        document.addEventListener('DOMContentLoaded', function() {
-            const filterBtns = document.querySelectorAll('.filter-btn');
-            const articles = document.querySelectorAll('.blog-article');
-            
-            filterBtns.forEach(btn => {
-                btn.addEventListener('click', function() {
-                    // Remove active class from all buttons
-                    filterBtns.forEach(b => b.classList.remove('active'));
-                    // Add active class to clicked button
-                    this.classList.add('active');
-                    
-                    const filter = this.getAttribute('data-filter');
-                    
-                    articles.forEach(article => {
-                        if (filter === 'all' || article.getAttribute('data-category') === filter) {
-                            article.style.display = 'block';
-                        } else {
-                            article.style.display = 'none';
-                        }
-                    });
-                });
-            });
-        });
-    </script>
 </body>
 </html>
