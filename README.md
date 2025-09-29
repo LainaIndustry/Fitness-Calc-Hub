@@ -1,21 +1,21 @@
-# Fitness Calculator Hub
+# Fitness-Calc-Hub
 
-A comprehensive collection of fitness calculators to help you track and improve your health and fitness.
+A comprehensive fitness calculator website providing accurate health and fitness calculations with a clean, responsive design.
 
 ## Features
 
-- **BMI Calculator**: Calculate your Body Mass Index
-- **BMR Calculator**: Determine your Basal Metabolic Rate
-- **TDEE Calculator**: Calculate your Total Daily Energy Expenditure
-- **Calorie Calculator**: Find your daily calorie needs based on goals
-- **Water Intake Calculator**: Determine optimal daily water consumption
-- **Heart Rate Calculator**: Calculate your heart rate training zones
+- **6 Fitness Calculators:**
+  - BMI Calculator
+  - BMR Calculator
+  - TDEE Calculator
+  - Calorie Calculator
+  - Heart Rate Calculator
+  - Water Intake Calculator
 
-## Technologies Used
+- **Responsive Design:** Works perfectly on all devices
+- **AdSense Ready:** Optimized for Google AdSense approval
+- **No External Dependencies:** Pure HTML, CSS, and JavaScript
+- **Privacy Focused:** All calculations performed locally
+- **Professional UI:** Clean, modern design with intuitive navigation
 
-- HTML5
-- CSS3
-- JavaScript (Vanilla)
-- Responsive Design
-
-## Project Structure
+## File Structure
