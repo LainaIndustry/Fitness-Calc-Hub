@@ -3,78 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BMI Calculator - Fitness Calculator Hub</title>
-    <meta name="description" content="Calculate your Body Mass Index (BMI) with our free BMI calculator. Understand if your weight is healthy for your height.">
+    <title>BMI Calculator - Fitness-Calc-Hub</title>
+    <meta name="description" content="Calculate your Body Mass Index (BMI) to assess if your weight is healthy for your height.">
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
     <!-- Header -->
     <header>
         <div class="container header-container">
-            <div class="logo">
-                <a href="../index.html">Fitness Calculator Hub</a>
-            </div>
-            <button class="mobile-menu-btn">☰</button>
-            <nav class="nav-menu">
-                <ul>
-                    <li><a href="../index.html">Home</a></li>
-                    <li><a href="index.html">Tools</a></li>
-                    <li><a href="../blog.html">Blog</a></li>
-                    <li><a href="../about.html">About</a></li>
-                    <li><a href="../legal/contact.html">Contact</a></li>
-                </ul>
-            </nav>
+            <a href="../index.html" class="logo">Fitness<span>Calc</span>Hub</a>
+            <div class="mobile-toggle">☰</div>
+            <ul class="nav-menu">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="index.html">Tools</a></li>
+                <li><a href="../blog.html">Blog</a></li>
+                <li><a href="../about.html">About</a></li>
+                <li><a href="../legal/contact.html">Contact</a></li>
+            </ul>
         </div>
     </header>
 
-    <!-- Calculator Section -->
-    <section class="container">
-        <div class="calculator-container">
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
             <h1>BMI Calculator</h1>
-            <p>Body Mass Index (BMI) is a measure of body fat based on height and weight that applies to adult men and women.</p>
-            
-            <form id="bmi-form" class="calculator-form">
-                <div class="form-group">
-                    <label for="unit">Unit System</label>
-                    <select id="unit" name="unit">
-                        <option value="metric">Metric (kg, cm)</option>
-                        <option value="imperial">Imperial (lbs, inches)</option>
-                    </select>
+            <p>Calculate your Body Mass Index to assess if your weight is healthy for your height.</p>
+        </div>
+    </section>
+
+    <!-- Calculator Section -->
+    <section class="section">
+        <div class="container">
+            <div class="calculator card">
+                <h2 class="section-title">Calculate Your BMI</h2>
+                <form id="bmi-form">
+                    <div class="form-group">
+                        <label for="height">Height (cm)</label>
+                        <input type="number" id="height" class="form-control" placeholder="Enter your height in cm" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="weight">Weight (kg)</label>
+                        <input type="number" id="weight" class="form-control" placeholder="Enter your weight in kg" required>
+                    </div>
+                    <button type="submit" class="btn btn-accent" style="width: 100%;">Calculate BMI</button>
+                </form>
+                <div class="result" id="bmi-result">
+                    <h3>Your BMI Result</h3>
+                    <div class="result-value" id="bmi-value">0</div>
+                    <div class="result-interpretation" id="bmi-interpretation"></div>
                 </div>
-                
-                <div class="form-group">
-                    <label for="weight">Weight</label>
-                    <input type="number" id="weight" name="weight" step="0.1" required>
-                    <span id="weight-unit">kg</span>
-                </div>
-                
-                <div class="form-group">
-                    <label for="height">Height</label>
-                    <input type="number" id="height" name="height" step="0.1" required>
-                    <span id="height-unit">cm</span>
-                </div>
-                
-                <button type="submit" class="btn">Calculate BMI</button>
-                <button type="button" id="bmi-reset" class="btn" style="background: #6c757d;">Reset</button>
-            </form>
-            
-            <div id="bmi-results" class="results">
-                <h3>Your BMI Result</h3>
-                <div class="result-value"></div>
-                <div class="result-description"></div>
             </div>
-            
-            <div style="margin-top: 2rem;">
-                <h3>About BMI</h3>
-                <p>BMI is a screening tool that can indicate whether a person is underweight, normal weight, overweight, or obese. However, it doesn't directly measure body fat and may not account for factors like muscle mass, bone density, and distribution of fat.</p>
+
+            <!-- BMI Information -->
+            <div class="card" style="margin-top: 40px;">
+                <h3>Understanding BMI</h3>
+                <p>Body Mass Index (BMI) is a measure of body fat based on your weight in relation to your height. It applies to most adult men and women aged 20 and over.</p>
                 
                 <h4>BMI Categories:</h4>
-                <ul>
+                <ul style="list-style-type: disc; margin-left: 20px; margin-top: 15px;">
                     <li><strong>Underweight:</strong> BMI less than 18.5</li>
-                    <li><strong>Normal weight:</strong> BMI 18.5 to 24.9</li>
-                    <li><strong>Overweight:</strong> BMI 25 to 29.9</li>
+                    <li><strong>Normal weight:</strong> BMI 18.5 - 24.9</li>
+                    <li><strong>Overweight:</strong> BMI 25 - 29.9</li>
                     <li><strong>Obesity:</strong> BMI 30 or greater</li>
                 </ul>
+                
+                <p style="margin-top: 15px; font-style: italic;">Note: BMI is a screening tool, not a diagnostic of body fatness or health. Consult a healthcare provider for assessment.</p>
             </div>
         </div>
     </section>
@@ -83,57 +76,42 @@
     <footer>
         <div class="container">
             <div class="footer-content">
-                <div class="footer-section">
-                    <h3>Fitness Calculator Hub</h3>
-                    <p>Your all-in-one solution for fitness calculations and health tracking.</p>
+                <div class="footer-column">
+                    <h3>Fitness-Calc-Hub</h3>
+                    <p>Your ultimate destination for accurate fitness calculations and health information.</p>
                 </div>
-                <div class="footer-section">
-                    <h3>Quick Links</h3>
-                    <ul>
-                        <li><a href="../index.html">Home</a></li>
-                        <li><a href="index.html">Tools</a></li>
-                        <li><a href="../blog.html">Blog</a></li>
-                        <li><a href="../about.html">About</a></li>
+                <div class="footer-column">
+                    <h3>Tools</h3>
+                    <ul class="footer-links">
+                        <li><a href="bmi.html">BMI Calculator</a></li>
+                        <li><a href="bmr.html">BMR Calculator</a></li>
+                        <li><a href="tdee.html">TDEE Calculator</a></li>
+                        <li><a href="heart-rate.html">Heart Rate Calculator</a></li>
                     </ul>
                 </div>
-                <div class="footer-section">
+                <div class="footer-column">
+                    <h3>Resources</h3>
+                    <ul class="footer-links">
+                        <li><a href="../blog.html">Blog</a></li>
+                        <li><a href="../about.html">About Us</a></li>
+                        <li><a href="../legal/contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
                     <h3>Legal</h3>
-                    <ul>
+                    <ul class="footer-links">
                         <li><a href="../legal/privacy-policy.html">Privacy Policy</a></li>
                         <li><a href="../legal/terms.html">Terms of Service</a></li>
                         <li><a href="../legal/disclaimer.html">Disclaimer</a></li>
-                        <li><a href="../legal/contact.html">Contact</a></li>
                     </ul>
                 </div>
             </div>
             <div class="copyright">
-                <p>&copy; 2023 Fitness Calculator Hub. All rights reserved.</p>
+                <p>&copy; 2023 Fitness-Calc-Hub. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
-    <script src="../js/main.js"></script>
     <script src="../js/bmi.js"></script>
-    
-    <script>
-    // Update unit labels based on selection
-    document.addEventListener('DOMContentLoaded', function() {
-        const unitSelect = document.getElementById('unit');
-        if (unitSelect) {
-            unitSelect.addEventListener('change', function() {
-                const unit = this.value;
-                const weightUnit = document.getElementById('weight-unit');
-                const heightUnit = document.getElementById('height-unit');
-                
-                if (weightUnit) {
-                    weightUnit.textContent = unit === 'metric' ? 'kg' : 'lbs';
-                }
-                if (heightUnit) {
-                    heightUnit.textContent = unit === 'metric' ? 'cm' : 'inches';
-                }
-            });
-        }
-    });
-</script>
 </body>
 </html>
