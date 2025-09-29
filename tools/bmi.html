@@ -3,163 +3,133 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BMI Calculator - Fitness-Calc-Hub</title>
-    <meta name="description" content="Calculate your Body Mass Index (BMI) to determine if you're at a healthy weight. Free and accurate BMI calculator.">
+    <title>BMI Calculator - Fitness Calculator Hub</title>
+    <meta name="description" content="Calculate your Body Mass Index (BMI) with our free BMI calculator. Understand if your weight is healthy for your height.">
     <link rel="stylesheet" href="../css/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- Header -->
-    <!-- Header -->
-<header class="header">
-    <div class="container">
-        <div class="logo">
-            <a href="index.html">
-                <img src="images/logo.png" alt="Fitness-Calc-Hub Logo">
-                <!-- Remove the text span to avoid duplication -->
-            </a>
-        </div>
-        <nav class="nav">
-    <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="tools/index.html">Tools</a></li> <!-- Changed from tools/bmi.html -->
-        <li><a href="blog.html">Blog</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="contact.html">Contact</a></li>
-    </ul>
-</nav>
-        <div class="mobile-menu-btn">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-    </div>
-</header>
-    <!-- AdSense Banner -->
-    <section class="adsense-banner">
-        <div class="container">
-            <div class="ad-placeholder">
-                <p>AdSense Banner (728x90)</p>
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <a href="../index.html">Fitness Calculator Hub</a>
             </div>
+            <button class="mobile-menu-btn">☰</button>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="index.html">Tools</a></li>
+                    <li><a href="../blog.html">Blog</a></li>
+                    <li><a href="../about.html">About</a></li>
+                    <li><a href="../legal/contact.html">Contact</a></li>
+                </ul>
+            </nav>
         </div>
-    </section>
+    </header>
 
     <!-- Calculator Section -->
-    <section class="calculator-container">
-        <h1>BMI Calculator</h1>
-        <p>Calculate your Body Mass Index (BMI) to determine if you're at a healthy weight for your height.</p>
-        
-        <div class="calculator-card">
+    <section class="container">
+        <div class="calculator-container">
+            <h1>BMI Calculator</h1>
+            <p>Body Mass Index (BMI) is a measure of body fat based on height and weight that applies to adult men and women.</p>
+            
             <form id="bmi-form" class="calculator-form">
                 <div class="form-group">
-                    <label>Unit System</label>
-                    <div class="radio-group">
-                        <div class="radio-option">
-                            <input type="radio" id="metric" name="unit" value="metric" checked>
-                            <label for="metric">Metric (cm, kg)</label>
-                        </div>
-                        <div class="radio-option">
-                            <input type="radio" id="imperial" name="unit" value="imperial">
-                            <label for="imperial">Imperial (inches, lbs)</label>
-                        </div>
-                    </div>
+                    <label for="unit">Unit System</label>
+                    <select id="unit" name="unit">
+                        <option value="metric">Metric (kg, cm)</option>
+                        <option value="imperial">Imperial (lbs, inches)</option>
+                    </select>
                 </div>
                 
                 <div class="form-group">
-                    <label for="height">Height (cm)</label>
-                    <input type="number" id="height" class="form-control" placeholder="Enter height in cm" min="50" max="250" required>
+                    <label for="weight">Weight</label>
+                    <input type="number" id="weight" name="weight" step="0.1" required>
+                    <span id="weight-unit">kg</span>
                 </div>
                 
                 <div class="form-group">
-                    <label for="weight">Weight (kg)</label>
-                    <input type="number" id="weight" class="form-control" placeholder="Enter weight in kg" min="20" max="300" required>
+                    <label for="height">Height</label>
+                    <input type="number" id="height" name="height" step="0.1" required>
+                    <span id="height-unit">cm</span>
                 </div>
                 
-                <button type="submit" class="btn btn-primary">Calculate BMI</button>
+                <button type="submit" class="btn">Calculate BMI</button>
+                <button type="button" id="bmi-reset" class="btn" style="background: #6c757d;">Reset</button>
             </form>
             
-            <div id="bmi-result" class="result-container" style="display: none;">
+            <div id="bmi-results" class="results">
                 <h3>Your BMI Result</h3>
-                <div class="result-value" id="bmi-value">0</div>
-                <div class="result-category" id="bmi-category">Category</div>
-                
-                <div class="result-description">
-                    <h4>BMI Categories:</h4>
-                    <ul>
-                        <li>Underweight: BMI less than 18.5</li>
-                        <li>Normal weight: BMI 18.5 to 24.9</li>
-                        <li>Overweight: BMI 25 to 29.9</li>
-                        <li>Obese: BMI 30 or greater</li>
-                    </ul>
-                    <p><strong>Note:</strong> BMI is a screening tool, not a diagnostic of body fatness or health. Consult a healthcare provider for assessment.</p>
-                </div>
+                <div class="result-value"></div>
+                <div class="result-description"></div>
             </div>
-        </div>
-    </section>
-
-    <!-- AdSense Banner -->
-    <section class="adsense-banner">
-        <div class="container">
-            <div class="ad-placeholder">
-                <p>AdSense Banner (728x90)</p>
+            
+            <div style="margin-top: 2rem;">
+                <h3>About BMI</h3>
+                <p>BMI is a screening tool that can indicate whether a person is underweight, normal weight, overweight, or obese. However, it doesn't directly measure body fat and may not account for factors like muscle mass, bone density, and distribution of fat.</p>
+                
+                <h4>BMI Categories:</h4>
+                <ul>
+                    <li><strong>Underweight:</strong> BMI less than 18.5</li>
+                    <li><strong>Normal weight:</strong> BMI 18.5 to 24.9</li>
+                    <li><strong>Overweight:</strong> BMI 25 to 29.9</li>
+                    <li><strong>Obesity:</strong> BMI 30 or greater</li>
+                </ul>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="footer">
+    <footer>
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <div class="logo">
-                        <a href="../index.html">
-                            <img src="../images/logo.png" alt="Fitness-Calc-Hub Logo">
-                            <span>Fitness-Calc-Hub</span>
-                        </a>
-                    </div>
-                    <p>Your ultimate destination for accurate fitness calculations and health information.</p>
+                    <h3>Fitness Calculator Hub</h3>
+                    <p>Your all-in-one solution for fitness calculations and health tracking.</p>
                 </div>
-                
                 <div class="footer-section">
-                    <h3>Tools</h3>
+                    <h3>Quick Links</h3>
                     <ul>
-                        <li><a href="bmi.html">BMI Calculator</a></li>
-                        <li><a href="bmr.html">BMR Calculator</a></li>
-                        <li><a href="tdee.html">TDEE Calculator</a></li>
-                        <li><a href="calorie.html">Calorie Calculator</a></li>
-                        <li><a href="heart-rate.html">Heart Rate Calculator</a></li>
-                        <li><a href="water.html">Water Intake Calculator</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-section">
-                    <h3>Company</h3>
-                    <ul>
-                        <li><a href="../about.html">About Us</a></li>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="index.html">Tools</a></li>
                         <li><a href="../blog.html">Blog</a></li>
-                        <li><a href="../contact.html">Contact</a></li>
+                        <li><a href="../about.html">About</a></li>
                     </ul>
                 </div>
-                
                 <div class="footer-section">
                     <h3>Legal</h3>
                     <ul>
-                        <li><a href="../legal/terms.html">Terms of Service</a></li>
                         <li><a href="../legal/privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="../legal/terms.html">Terms of Service</a></li>
                         <li><a href="../legal/disclaimer.html">Disclaimer</a></li>
+                        <li><a href="../legal/contact.html">Contact</a></li>
                     </ul>
                 </div>
             </div>
-            
-            <div class="footer-bottom">
-                <p>&copy; 2023 Fitness-Calc-Hub. All rights reserved.</p>
+            <div class="copyright">
+                <p>&copy; 2023 Fitness Calculator Hub. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
     <script src="../js/main.js"></script>
     <script src="../js/bmi.js"></script>
+    
+    <script>
+        // Update unit labels based on selection
+        document.getElementById('unit').addEventListener('change', function() {
+            const unit = this.value;
+            const weightUnit = document.getElementById('weight-unit');
+            const heightUnit = document.getElementById('height-unit');
+            
+            if (unit === 'metric') {
+                weightUnit.textContent = 'kg';
+                heightUnit.textContent = 'cm';
+            } else {
+                weightUnit.textContent = 'lbs';
+                heightUnit.textContent = 'inches';
+            }
+        });
+    </script>
 </body>
 </html>
