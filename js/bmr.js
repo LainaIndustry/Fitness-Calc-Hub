@@ -1,65 +1,64 @@
 // BMR Calculator
-function initBMRCalculator() {
-    const form = document.getElementById('bmr-form');
-    const resultDiv = document.getElementById('bmr-result');
-    const bmrValue = document.getElementById('bmr-value');
+document.addEventListener('DOMContentLoaded', function() {
+    const bmrForm = document.getElementById('bmr-form');
+    const bmrResults = document.getElementById('bmr-results');
     
-    if (!form) return;
-    
-    form.addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        // Get form values
-        const age = parseInt(document.getElementById('age').value);
-        const gender = document.querySelector('input[name="gender"]:checked').value;
-        const weight = parseFloat(document.getElementById('weight').value);
-        const height = parseFloat(document.getElementById('height').value);
-        const unit = document.querySelector('input[name="unit"]:checked').value;
-        
-        // Validate inputs
-        if (!validateNumberInput(document.getElementById('age'), 15, 100) || 
-            !validateNumberInput(document.getElementById('weight'), 20, 300) ||
-            !validateNumberInput(document.getElementById('height'), 50, 250)) {
-            return;
-        }
-        
-        // Calculate BMR
-        let bmr;
-        if (unit === 'metric') {
-            // Metric calculation
-            if (gender === 'male') {
-                bmr = 88.362 + (13.397 * weight) + (4.799 * height) - (5.677 * age);
-            } else {
-                bmr = 447.593 + (9.247 * weight) + (3.098 * height) - (4.330 * age);
-            }
-        } else {
-            // Imperial calculation
-            if (gender === 'male') {
-                bmr = 66 + (6.23 * weight) + (12.7 * height) - (6.8 * age);
-            } else {
-                bmr = 655 + (4.35 * weight) + (4.7 * height) - (4.7 * age);
-            }
-        }
-        
-        // Display result
-        bmrValue.textContent = formatNumber(bmr);
-        resultDiv.style.display = 'block';
-    });
-    
-    // Unit toggle functionality
-    const unitRadios = document.querySelectorAll('input[name="unit"]');
-    const heightLabel = document.querySelector('label[for="height"]');
-    const weightLabel = document.querySelector('label[for="weight"]');
-    
-    unitRadios.forEach(radio => {
-        radio.addEventListener('change', function() {
-            if (this.value === 'metric') {
-                heightLabel.textContent = 'Height (cm)';
-                weightLabel.textContent = 'Weight (kg)';
-            } else {
-                heightLabel.textContent = 'Height (inches)';
-                weightLabel.textContent = 'Weight (lbs)';
-            }
+    if (bmrForm) {
+        bmrForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            calculateBMR();
         });
-    });
+        
+        // Add reset functionality
+        const resetBtn = document.getElementById('bmr-reset');
+        if (resetBtn) {
+            resetBtn.addEventListener('click', function() {
+                resetForm('bmr-form', 'bmr-results');
+            });
+        }
+    }
+});
+
+function calculateBMR() {
+    const gender = document.querySelector('input[name="gender"]:checked').value;
+    const age = parseInt(document.getElementById('age').value);
+    const weight = parseFloat(document.getElementById('weight').value);
+    const height = parseFloat(document.getElementById('height').value);
+    const unit = document.getElementById('unit').value;
+    
+    // Validation
+    if (!validateNumber(age, 1, 120) || !validateNumber(weight, 1, 500) || !validateNumber(height, 30, 250)) {
+        alert('Please enter valid values for all fields');
+        return;
+    }
+    
+    let bmr;
+    
+    // Convert to metric if necessary
+    let weightKg = weight;
+    let heightCm = height;
+    
+    if (unit === 'imperial') {
+        // Convert lbs to kg
+        weightKg = weight * 0.453592;
+        // Convert inches to cm
+        heightCm = height * 2.54;
+    }
+    
+    // Calculate BMR using Mifflin-St Jeor Equation
+    if (gender === 'male') {
+        bmr = 10 * weightKg + 6.25 * heightCm - 5 * age + 5;
+    } else {
+        bmr = 10 * weightKg + 6.25 * heightCm - 5 * age - 161;
+    }
+    
+    // Round to nearest whole number
+    bmr = Math.round(bmr);
+    
+    // Show results
+    const resultText = `Your BMR is ${bmr} calories/day`;
+    const descriptionText = `<p>Your Basal Metabolic Rate (BMR) is the number of calories your body needs at rest to maintain basic physiological functions.</p>
+                            <p>This is the minimum number of calories you would burn if you stayed in bed all day.</p>`;
+    
+    showResults('bmr-results', resultText, descriptionText);
 }
